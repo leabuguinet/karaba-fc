@@ -33,45 +33,29 @@ const ButtonScroll = styled.div`
     background-image: url(${arrowDown});
     width: 40px;
     height: 40px;
+    cursor: pointer;
 
 `
 
 export default function Header() {
 
-
     const scroller = Scroll.scroller;
-
-    //var element_to_scroll_to = document.getElementById('navbar');
-
-    // Basically `element_to_scroll_to` just have to be a reference
-    // to any DOM element present on the page
-    // Then:
-    //element_to_scroll_to.scrollIntoView();
-
 
     const scrollToAnchor = () => {
         scroller.scrollTo('anchor', {
           duration: 1500,
           delay: 100,
           smooth: true,
-          offset: -50
+          //offset: -50
         });
       };
 
-
-    function scrollDown(){
-        //window.scrollTo(0, document.querySelector("#header").scrollHeight);
-        let bottom = document.querySelector("#header").scrollHeight;
-        bottom.scrollIntoView();
-        
-    };
-
     return (
 
-    <HeaderDiv id="header">
-        <Logo src={karabalogo} alt='KARABA FC'></Logo>
-        <ButtonScroll onClick={scrollToAnchor}></ButtonScroll>
-    </HeaderDiv>
+        <HeaderDiv id="header">
+            <Logo src={karabalogo} alt='KARABA FC'></Logo>
+            <ButtonScroll onClick={scrollToAnchor}></ButtonScroll>
+        </HeaderDiv>
 
     )
 }

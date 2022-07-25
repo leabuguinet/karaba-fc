@@ -6,17 +6,34 @@ import data from './data/data.json';
 
 const TourContainer = styled.div`
   height: 80vh;
-  width: 70%;
+  max-width: 70%;
+  margin-top: 5rem;
+`
+
+const Title = styled.h1`
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+`
+const EventCardsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
 `
 
 const Tour = () => {
   return (
     <TourContainer>
 
-    { data.map( (data) => {
-        return <EventCard data={data} key={data.id}/>
-      })
-    }
+      <Title>Tour</Title>
+
+      <EventCardsContainer>
+
+        { data.map( (data) => {
+            return <EventCard data={data} key={data.id}/>
+          })
+        }
+      </EventCardsContainer>
 
     </TourContainer>
   )

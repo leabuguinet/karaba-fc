@@ -12,14 +12,14 @@ const toggleHover = () => setHovered(!hovered); */
 
 const NavBarContainer = styled.nav`
   height: calc(100vh - 300px);
-  width: 30%;
+  //width: 30%;
 `
 const NavBar = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: calc(100vh - 300px);
-  position: absolute;
+  position: relative;
   padding: 2rem;
   //border-right: white solid 1px;
 
@@ -30,7 +30,7 @@ const NavBar = styled.div`
     color: white;
     position: absolute;
     background: white;
-    right: 14px;
+    left: 225px;
   }
 `
 const NavLinkStyled = styled(NavLink)`
@@ -42,6 +42,7 @@ const NavLinkStyled = styled(NavLink)`
   font-family: 'League Spartan', sans-serif;
   font-weight: 600;
   position: relative;
+  width: 135px;
 
   //When the page is active
   &[class*="active"] {
@@ -49,7 +50,7 @@ const NavLinkStyled = styled(NavLink)`
     &::after{
       content: url(${waterDropSvg});
       position: absolute;
-      right: 120px;
+      right: 150px;
       bottom: 0;
     }
   }
@@ -57,7 +58,7 @@ const NavLinkStyled = styled(NavLink)`
   &::before{
     content: url(${waterDropSvg});
     position: absolute;
-    right: 120px;
+    right: 150px;
     opacity: 0;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
@@ -101,7 +102,7 @@ const NavLinkStyled = styled(NavLink)`
 `
 const Logo = styled.img`
   width: 180px;
-  padding-bottom: 2rem;
+  padding: 4rem 0 2rem 0;
 `
 
 export default function Nav() {
@@ -120,13 +121,13 @@ export default function Nav() {
   return (
 
     <NavBarContainer id="navbar">
-
       
-
-      <NavBar className=''>
       <Element name="anchor">
         <Logo src={karabalogo} alt='KARABA FC' />
       </Element>
+      
+      <NavBar className=''>
+
         <NavLinkStyled to="/" onMouseLeave={dropDownActive} onMouseEnter={dropDownDisable}>TOUR</NavLinkStyled>
         <NavLinkStyled to="/music" >MUSIC</NavLinkStyled>
         <NavLinkStyled to="/merchandise" >MERCHANDISE</NavLinkStyled>

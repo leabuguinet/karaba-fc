@@ -6,6 +6,7 @@ import {
   Navigate
 } from "react-router-dom";
 import { createGlobalStyle } from 'styled-components'
+import { useEffect, useState, useRef, useLayoutEffect } from 'react';
 
 import Main from './components/Main';
 import Header from './components/Header';
@@ -15,6 +16,7 @@ import Tour from './components/Tour';
 import Merchandise from './components/Merchandise';
 import Contact from './components/Contact';
 import Music from './components/Music';
+
 
 const GlobalStyle = createGlobalStyle`
 
@@ -26,13 +28,14 @@ const GlobalStyle = createGlobalStyle`
 
 
 function App() {
+
   return (
     <>
       
       <GlobalStyle />
       <BrowserRouter>
 
-        <Header path="/" />
+        <Header />
 
         <Main className="container">
           <Nav />
@@ -48,14 +51,13 @@ function App() {
 
           </Routes>
         </Main>
+
+        <Footer/>
       
       </BrowserRouter>
 
-      <Footer path="/" />
-
-
     </>
-  );
+  ); 
 }
 
 export default App;

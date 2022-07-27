@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styled from "styled-components";
 import * as Scroll from 'react-scroll';
 
@@ -11,7 +11,7 @@ import headerBg3 from '../assets/images/clyde-he.jpg';
 import arrowDown from '../assets/images/down-arrow.svg'
 
 const HeaderDiv = styled.header`
-    background-image: url(${headerBg});
+    background-image: linear-gradient(0deg, rgba(0,0,26,1) 0%, rgba(255,255,255,0) 15%), url(${headerBg});
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -48,11 +48,11 @@ export default function Header() {
           smooth: true,
           //offset: -50
         });
-      };
+    };
 
     return (
 
-        <HeaderDiv id="header">
+        <HeaderDiv id="header" >
             <Logo src={karabalogo} alt='KARABA FC'></Logo>
             <ButtonScroll onClick={scrollToAnchor}></ButtonScroll>
         </HeaderDiv>

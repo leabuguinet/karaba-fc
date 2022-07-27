@@ -1,12 +1,13 @@
 import React from 'react'
-import styled from "styled-components";
-import EventCard from './EventCard';
-import data from './data/data.json';
+import styled from "styled-components"
+import EventCard from './EventCard'
+import data from './data/data.json'
 
 
 const TourContainer = styled.div`
-  height: 80vh;
+  //height: 80vh;
   max-width: 70%;
+  min-width: 50%;
   margin-top: 5rem;
 `
 

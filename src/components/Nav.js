@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
@@ -11,8 +11,14 @@ import karabalogo from '../assets/images/KarabaFC-logo-white.png';
 const toggleHover = () => setHovered(!hovered); */
 
 const NavBarContainer = styled.nav`
-  height: calc(100vh - 300px);
-  //width: 30%;
+  //height: calc(100vh - 300px);
+  height: 200px;
+  min-width: 20%;
+  //max-width: 30%;
+  position: sticky;
+  top: 10px;
+  margin-bottom: 20rem;
+  
 `
 const NavBar = styled.div`
   display: flex;
@@ -107,20 +113,46 @@ const Logo = styled.img`
 
 export default function Nav() {
 
-  function dropDownActive(e){
+/*   function dropDownActive(e){
     e.target.classList.add('test')
   }
 
   function dropDownDisable(e){
     e.target.classList.remove('test')
-  }
+  } */
+
+/*   const navRef = useRef();
+  const [ navPosition, setNavPosition ] = useState(true);
+
+  const scrollHandler = () => {
+    //console.log(navRef.current.getBoundingClientRect().top);
+
+    if(navRef.current.getBoundingClientRect().top >= 0){
+      return setNavPosition(false);
+    }
+    
+    if(navRef.current.getBoundingClientRect().top < 0){
+      return setNavPosition(true);
+      
+    }
+    
+  };
+
+  console.log(navPosition);
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollHandler, true);
+    return () => {
+      window.removeEventListener("scroll", scrollHandler, true);
+    };
+  }, []); */
 
   const Element = Scroll.Element;
 
 
   return (
 
-    <NavBarContainer id="navbar">
+    <NavBarContainer id="navbar" /* ref={navRef} */>
       
       <Element name="anchor">
         <Logo src={karabalogo} alt='KARABA FC' />
@@ -128,7 +160,7 @@ export default function Nav() {
       
       <NavBar className=''>
 
-        <NavLinkStyled to="/" onMouseLeave={dropDownActive} onMouseEnter={dropDownDisable}>TOUR</NavLinkStyled>
+        <NavLinkStyled to="/" /* onMouseLeave={dropDownActive} onMouseEnter={dropDownDisable} */>TOUR</NavLinkStyled>
         <NavLinkStyled to="/music" >MUSIC</NavLinkStyled>
         <NavLinkStyled to="/merchandise" >MERCHANDISE</NavLinkStyled>
         <NavLinkStyled to="/contact" >BIO & CONTACT</NavLinkStyled>

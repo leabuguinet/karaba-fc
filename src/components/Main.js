@@ -21,7 +21,11 @@ const MainContainer = styled.main`
     width: 80%;
 `
 
+
 function Main() {
+
+
+
   return (
     <MainContainer>
         <Nav />

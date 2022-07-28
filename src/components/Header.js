@@ -4,11 +4,11 @@ import * as Scroll from 'react-scroll';
 
 /* Images */
 
-import karabalogo from '../assets/images/KarabaFC-logo-white.png';
+import karabalogo from '../assets/icons/KarabaFC-logo-white.png';
 import headerBg from '../assets/images/alex-lerum.jpg';
 import headerBg2 from '../assets/images/pawel-czerwinski.jpg';
 import headerBg3 from '../assets/images/clyde-he.jpg';
-import arrowDown from '../assets/images/down-arrow.svg'
+import arrowDown from '../assets/icons/down-arrow.svg'
 
 const HeaderDiv = styled.header`
     background-image: linear-gradient(0deg, rgba(0,0,26,1) 0%, rgba(255,255,255,0) 15%), url(${headerBg});

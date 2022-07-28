@@ -11,6 +11,7 @@ import Tour from './Tour';
 import Merchandise from './Merchandise';
 import Contact from './Contact';
 import Music from './Music';
+import Mentions from "./Mentions";
 
 const MainContainer = styled.main`
     display: flex;
@@ -36,6 +37,7 @@ function Main() {
             <Route path="/music" element={<Music />} />
             <Route path="/merchandise" element={<Merchandise />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/mentions" element={<Mentions />} />
 
             <Route path="*" element={<Navigate to="/"/>} />
 

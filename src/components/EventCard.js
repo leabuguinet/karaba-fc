@@ -1,6 +1,8 @@
 import React from 'react'
 import styled, { StyledComponent } from 'styled-components'
 
+import { ReactComponent as ExtLink } from '../assets/icons/external-link.svg';
+
 const Card = styled.div`
     color: white;
     max-width: 500px;
@@ -16,21 +18,25 @@ const DateInfo = styled.div`
     width: 100px;
     height: 100px;
 
+    //Day
     span{
       position: relative;
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
 
+    //Separator
     span:nth-child(2){
-      font-size: 6rem;
-      left: 20px;
-      bottom: 30px;
+      font-size: 4rem;
+      left: 25px;
+      bottom: 20px;
       font-weight: 100;
       transform: rotate(15deg);
     }
+
+    //Month
     span:last-child{
       left: 48px;
-      bottom: 80px;
+      bottom: 60px;
     }
 `
 
@@ -38,12 +44,18 @@ const Description = styled.div`
 
   margin-left: 2rem;
 
-  h3{
+  h2 {
     font-size: 1.5rem;
+    font-weight: 400;
   }
 
-  a{
+  a {
     color: #ffffff;
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
   }
 `
 
@@ -57,10 +69,10 @@ const EventCard = ({data}) => {
 
       </DateInfo>
       <Description>
-        <h3>{data.city} • {data.location} {data.time && <span>• {data.time} </span>}</h3>
+        <h2>{data.city} • {data.location} {data.time && <span>• {data.time} </span>}</h2>
         {data.description && <p>{data.description}</p>}
 
-        {data.eventlink && <a href={data.eventlink}>Lien vers l'évènement</a>}
+        {data.eventlink && <a href={data.eventlink}><ExtLink /></a>}
       </Description>
 
     </Card>

@@ -24,8 +24,25 @@ const GlobalStyle = createGlobalStyle`
     background-color:  #00001a;
     font-family: 'League Spartan', sans-serif;
   }
-`
 
+  h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    font-size: 2rem;
+  }
+
+  h2 {
+    color: #ffffff;
+    margin-bottom: 3rem;
+    font-size: 1.2rem;
+  }
+
+  .p-mb{
+    margin-bottom: 3rem;
+  }
+
+`
 
 function App() {
 

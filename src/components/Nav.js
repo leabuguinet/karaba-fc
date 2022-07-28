@@ -4,20 +4,20 @@ import { NavLink } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
 
 
-import waterDropSvg from '../assets/images/water-drop.svg'
-import karabalogo from '../assets/images/KarabaFC-logo-white.png';
+import waterDropSvg from '../assets/icons/water-drop.svg'
+import karabalogo from '../assets/icons/KarabaFC-logo-white.png';
 
 /* const [hovered, setHovered] = useState(false);
 const toggleHover = () => setHovered(!hovered); */
 
 const NavBarContainer = styled.nav`
   //height: calc(100vh - 300px);
-  height: 200px;
+  height: 600px;
   min-width: 20%;
   //max-width: 30%;
   position: sticky;
   top: 10px;
-  margin-bottom: 20rem;
+  //margin-bottom: 25rem;
   
 `
 const NavBar = styled.div`
@@ -32,7 +32,7 @@ const NavBar = styled.div`
   &::after{
     content: '';
     width: 1px;
-    height: 350px;
+    height: 300px;
     color: white;
     position: absolute;
     background: white;
@@ -45,6 +45,7 @@ const NavLinkStyled = styled(NavLink)`
   margin: 1rem 2rem;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+  font-size: 1.2rem;
   font-family: 'League Spartan', sans-serif;
   font-weight: 600;
   position: relative;

@@ -11,22 +11,16 @@ const TourContainer = styled.div`
   margin-top: 5rem;
 `
 
-const Title = styled.h1`
-  color: #ffffff;
-  text-transform: uppercase;
-  margin-bottom: 5rem;
-`
 const EventCardsContainer = styled.div`
   display: flex;
   flex-direction: column;
-
 `
 
 const Tour = () => {
   return (
     <TourContainer>
 
-      <Title>Tour</Title>
+      <h1>Tour</h1>
 
       <EventCardsContainer>
 

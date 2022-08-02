@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import styled, { StyledComponent } from 'styled-components'
+import { CSSTransitionGroup, Transition, CSSTransition } from 'react-transition-group'
 
 import { ReactComponent as ExtLink } from '../assets/icons/external-link.svg';
 
@@ -7,36 +8,38 @@ const Card = styled.div`
     color: white;
     max-width: 500px;
     display: flex;
-    margin-bottom: 4rem;
+    align-items: center;
+    margin-bottom: 5rem;
 `
 
 const DateInfo = styled.div`
-    display: flex;
-    flex-direction: column;
+    display: inline;
+    //flex-direction: column;
     color: white;
     //position: absolute;
-    width: 100px;
-    height: 100px;
+    width: auto;
+    //height: 100px;
 
     //Day
     span{
       position: relative;
       font-size: 2rem;
+      top: -23px;
     }
 
     //Separator
     span:nth-child(2){
       font-size: 4rem;
-      left: 25px;
-      bottom: 20px;
+      left: 0px;
+      top: 4px;
       font-weight: 100;
       transform: rotate(15deg);
     }
 
     //Month
     span:last-child{
-      left: 48px;
-      bottom: 60px;
+      left: -1px;
+      top: 13px;
     }
 `
 
@@ -47,21 +50,38 @@ const Description = styled.div`
   h2 {
     font-size: 1.5rem;
     font-weight: 400;
+    margin: 0;
   }
 
   a {
     color: #ffffff;
+    fill: #ffffff;
+    text-decoration: none;
   }
 
   svg {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
   }
 `
 
 const EventCard = ({data}) => {
 
+
+    const [animate, setAnimate] = useState(false)
+  
+    // Animate on click button and revert after 3000ms.
+    const doAnimate = useCallback(() => {
+      setAnimate(true)
+      setTimeout(() => {
+        setAnimate(false)
+      }, 3000)
+    }, [])
+
+
   return (
+
+    <Transition in={animate} timeout={500}>
     <Card>
       <DateInfo>
 
@@ -69,13 +89,15 @@ const EventCard = ({data}) => {
 
       </DateInfo>
       <Description>
-        <h2>{data.city} • {data.location} {data.time && <span>• {data.time} </span>}</h2>
+
+        <h2>{data.city} • {data.location} {data.time && <span>• {data.time} </span>} {data.eventlink && <a href={data.eventlink}> • <ExtLink /></a>}</h2>
+        
         {data.description && <p>{data.description}</p>}
 
-        {data.eventlink && <a href={data.eventlink}><ExtLink /></a>}
       </Description>
 
     </Card>
+    </Transition>
   )
 }
 

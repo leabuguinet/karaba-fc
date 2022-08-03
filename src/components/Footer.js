@@ -25,11 +25,6 @@ const FooterContainer = styled.footer`
   justify-content: center;
   align-items: center;
 
-  svg{
-    width: 50px;
-    height: 50px;
-    fill: white;
-  }
 `
 
 const Icons = styled.div`
@@ -37,6 +32,39 @@ const Icons = styled.div`
   justify-content: center;
   padding: 8rem 0 4rem 0;
   gap: 40px;
+
+  a svg.logo-1 path {
+    fill: url(#logo-gradient1) #447799;
+	}
+
+  a svg.logo-2 path {
+    fill: url(#logo-gradient2) #447799;
+	}
+
+  a svg.logo-3 path {
+    fill: url(#logo-gradient3) #447799;
+	}
+
+  svg:hover{
+      transform: scale(1.08);
+  }
+
+  svg.logo-1, svg.logo-2, svg.logo-3{
+    transition: 1s ease-in-out;
+
+    &:hover stop:first-child {
+    stop-color: #466ec3;
+    }
+
+    &:hover stop:last-child {
+      stop-color: #466ec3;
+    }
+  }
+
+  stop {
+    transition: 1s;
+  }
+  
 `
 const Mentions = styled.span`
   margin-bottom: 2rem ;
@@ -51,7 +79,7 @@ export default function Footer() {
     <FooterContainer>
 
       <Icons>
-      <a href='#'><IgIcon /></a>
+        <a href='#'><IgIcon /></a>
         <a href='https://www.facebook.com/KARABAFC'><FbIcon /></a>
         <a href='https://karabafc.bandcamp.com/'><BcIcon /></a>
       </Icons>

@@ -24,7 +24,7 @@ const NavBar = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: calc(100vh - 300px);
+  //height: calc(100vh - 300px);
   position: relative;
   padding: 2rem;
   //border-right: white solid 1px;

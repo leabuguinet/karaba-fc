@@ -2,29 +2,57 @@ import React, { useState, useCallback } from 'react'
 import styled, { StyledComponent } from 'styled-components'
 import { CSSTransitionGroup, Transition, CSSTransition } from 'react-transition-group'
 
-import { ReactComponent as ExtLink } from '../assets/icons/external-link.svg';
+import { ReactComponent as ExtLink } from '../assets/icons/external-link.svg'
 
 const Card = styled.div`
     color: white;
     max-width: 500px;
     display: flex;
     align-items: center;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+    padding: 30px;
+
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: inset -1px 0px 2px rgba(0,27,92,0.35),
+                inset 0px 1px 2px rgba(0,27,92,0.35),
+                inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.05);
+    transition: background-color ease-in-out 0.5s;
+
+    &::before{
+      z-index: -1;
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 20px;
+      background: rgb(0,0,26);
+      background: linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(0,51,153,0.6012780112044818) 100%);
+      opacity: 0;
+      transition: opacity 0.4s linear;
+    }
+
+    &:hover::before{
+      opacity: 0.5;
+    }
+
 `
 
 const DateInfo = styled.div`
     display: inline;
-    //flex-direction: column;
     color: white;
-    //position: absolute;
     width: auto;
-    //height: 100px;
 
     //Day
     span{
       position: relative;
       font-size: 2rem;
       top: -23px;
+      left: 10px
     }
 
     //Separator
@@ -38,9 +66,10 @@ const DateInfo = styled.div`
 
     //Month
     span:last-child{
-      left: -1px;
+      left: -10px;
       top: 13px;
     }
+    
 `
 
 const Description = styled.div`
@@ -68,20 +97,12 @@ const Description = styled.div`
 const EventCard = ({data}) => {
 
 
-    const [animate, setAnimate] = useState(false)
-  
-    // Animate on click button and revert after 3000ms.
-    const doAnimate = useCallback(() => {
-      setAnimate(true)
-      setTimeout(() => {
-        setAnimate(false)
-      }, 3000)
-    }, [])
+
 
 
   return (
 
-    <Transition in={animate} timeout={500}>
+
     <Card>
       <DateInfo>
 
@@ -97,7 +118,7 @@ const EventCard = ({data}) => {
       </Description>
 
     </Card>
-    </Transition>
+
   )
 }
 

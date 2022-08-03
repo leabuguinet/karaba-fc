@@ -1,10 +1,17 @@
 import {
   Routes,
   Route,
-  Navigate
+  Navigate,
+  UseLocation
 } from "react-router-dom";
 
 import styled from "styled-components";
+import { Transition, TransitionGroup } from 'react-transition-group';
+
+import { CSSTransition } from 'react-transition-group';
+
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion"
 
 import Nav from './Nav';
 import Tour from './Tour';
@@ -22,26 +29,31 @@ const MainContainer = styled.main`
     width: 80%;
 `
 
-
 function Main() {
 
-
+  const pageStyle = {
+    height: "auto",
+    maxWidth: "70%",
+    minWidth: "50%",
+    marginTop: "5rem"
+  };
 
   return (
     <MainContainer>
         <Nav />
-
+        <AnimatePresence exitBeforeEnter>
         <Routes>
 
-            <Route path="/" element={<Tour />}/>
-            <Route path="/music" element={<Music />} />
-            <Route path="/merchandise" element={<Merchandise />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/mentions" element={<Mentions />} />
+            <Route path="/" element={<Tour pageStyle={pageStyle}/>}/>
+            <Route path="/music" element={<Music pageStyle={pageStyle}/>} />
+            <Route path="/merchandise" element={<Merchandise pageStyle={pageStyle}/>} />
+            <Route path="/contact" element={<Contact pageStyle={pageStyle}/>} />
+            <Route path="/mentions" element={<Mentions pageStyle={pageStyle}/>} />
 
             <Route path="*" element={<Navigate to="/"/>} />
 
         </Routes>
+        </AnimatePresence>
 
     </MainContainer>
   );

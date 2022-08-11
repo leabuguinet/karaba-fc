@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import styled, { StyledComponent } from 'styled-components'
 import { CSSTransitionGroup, Transition, CSSTransition } from 'react-transition-group'
+import { device } from "../global/Breakpoints";
 
 import { ReactComponent as ExtLink } from '../assets/icons/external-link.svg'
 
@@ -21,6 +22,11 @@ const Card = styled.div`
     background: rgba(255, 255, 255, 0.05);
     transition: background-color ease-in-out 0.5s;
 
+    @media ${device.mobileL} { 
+      padding: 20px;
+      min-width: 100%;
+    }
+
     &::before{
       z-index: -1;
       position: absolute;
@@ -39,7 +45,6 @@ const Card = styled.div`
     &:hover::before{
       opacity: 0.5;
     }
-
 `
 
 const DateInfo = styled.div`
@@ -52,7 +57,10 @@ const DateInfo = styled.div`
       position: relative;
       font-size: 2rem;
       top: -23px;
-      left: 10px
+      left: 10px;
+      @media ${device.mobileL} { 
+        font-size: 1rem;
+      }
     }
 
     //Separator
@@ -62,6 +70,9 @@ const DateInfo = styled.div`
       top: 4px;
       font-weight: 100;
       transform: rotate(15deg);
+      @media ${device.mobileL} { 
+        font-size: 2rem;
+      }
     }
 
     //Month
@@ -69,7 +80,7 @@ const DateInfo = styled.div`
       left: -10px;
       top: 13px;
     }
-    
+  
 `
 
 const Description = styled.div`
@@ -77,9 +88,12 @@ const Description = styled.div`
   margin-left: 2rem;
 
   h2 {
-    font-size: 1.5rem;
+    //font-size: 1.5rem;
     font-weight: 400;
     margin: 0;
+/*     @media ${device.mobileL} { 
+        font-size: 0.8rem;
+    } */
   }
 
   a {
@@ -89,19 +103,14 @@ const Description = styled.div`
   }
 
   svg {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
   }
 `
 
 const EventCard = ({data}) => {
 
-
-
-
-
   return (
-
 
     <Card>
       <DateInfo>

@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
-
+import { device } from '../global/Breakpoints'
+import { animation } from '../global/Animation'
 
 import waterDropSvg from '../assets/icons/water-drop.svg'
 import karabalogo from '../assets/icons/KarabaFC-logo-white.png';
@@ -11,23 +12,53 @@ import karabalogo from '../assets/icons/KarabaFC-logo-white.png';
 const toggleHover = () => setHovered(!hovered); */
 
 const NavBarContainer = styled.nav`
-  //height: calc(100vh - 300px);
   height: 600px;
-  min-width: 20%;
-  //max-width: 30%;
+  min-width: 10%;
   position: sticky;
   top: 10px;
-  //margin-bottom: 25rem;
+
+  @media ${device.tabletL} { 
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  //PHONE
+  @media ${device.mobileL} { 
+    flex-direction: row;
+    z-index: 20;
+    position: sticky;
+    //background-color:  #00001a;
+    background-image: linear-gradient(180deg, rgba(0,0,26,1) 0%, rgba(0,0,26,0.8421052631578947) 64%, rgba(0,0,26,0.6666666666666667) 83%, rgba(0,0,26,0) 100%);
+    top: 0;
+    bottom: 0;
+    padding-top: 10px;
+  }
+  
   
 `
 const NavBar = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  //height: calc(100vh - 300px);
   position: relative;
   padding: 2rem;
-  //border-right: white solid 1px;
+
+  @media ${device.tabletL} { 
+    flex-direction: row;
+    justify-content: space-between;
+    //background-color:  #00001a;
+    width: 100%;
+    gap: 10px;
+  }
+
+  @media ${device.mobileL} { 
+    padding: 0rem;
+    align-items: center;
+  }
 
   &::after{
     content: '';
@@ -37,6 +68,11 @@ const NavBar = styled.div`
     position: absolute;
     background: white;
     left: 225px;
+
+    //PHONE
+    @media ${device.tabletL} { 
+    display: none;
+    }
   }
 `
 const NavLinkStyled = styled(NavLink)`
@@ -51,25 +87,67 @@ const NavLinkStyled = styled(NavLink)`
   position: relative;
   width: 135px;
 
+  @media ${device.tabletL} { 
+    width: auto;
+    margin: 0rem;
+    font-size: 1rem;
+  }
+
+  //PHONE
+  @media ${device.mobileL} { 
+    text-align: center;
+    font-size: 0.8rem;
+  }
+
+
   //When the page is active
   &[class*="active"] {
 
     &::after{
-      content: url(${waterDropSvg});
+      background-image: url(${waterDropSvg});
+      width: 15px; 
+      height: 15px;
+      background-size: contain;
+      background-repeat: none;
       position: absolute;
       right: 150px;
-      bottom: 0;
+      bottom: 3px;
+      content:'';
+
+      @media ${device.tabletL} { 
+        left: 100%;
+      }
+
+      @media ${device.mobileL} { 
+        width: 8px; 
+        height: 8px;
+      }
     }
   }
 
   &::before{
-    content: url(${waterDropSvg});
+    content: "";
+    background-image: url(${waterDropSvg});
+    background-size: contain;
+    background-repeat: none;
+    width: 15px; 
+    height: 15px;
     position: absolute;
     right: 150px;
     opacity: 0;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
-    bottom: 120px;
+    bottom: 123px;
+
+    @media ${device.tabletL} { 
+      left: 100%;
+    }
+
+
+    @media ${device.mobileL} { 
+      width: 8px; 
+      height: 8px;
+    }
   } 
 
   &:hover {
@@ -78,7 +156,6 @@ const NavLinkStyled = styled(NavLink)`
 	    animation: fade-in-top 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
       opacity: 0;
     }
-
   }
 
   @-webkit-keyframes fade-in-top {
@@ -110,64 +187,36 @@ const NavLinkStyled = styled(NavLink)`
 const Logo = styled.img`
   width: 180px;
   padding: 4rem 0 2rem 0;
+  @media ${device.tabletL} { 
+    padding: 0;
+    width: 50px;
+  }
 `
+
 
 export default function Nav() {
 
-/*   function dropDownActive(e){
-    e.target.classList.add('test')
-  }
-
-  function dropDownDisable(e){
-    e.target.classList.remove('test')
-  } */
-
-/*   const navRef = useRef();
-  const [ navPosition, setNavPosition ] = useState(true);
-
-  const scrollHandler = () => {
-    //console.log(navRef.current.getBoundingClientRect().top);
-
-    if(navRef.current.getBoundingClientRect().top >= 0){
-      return setNavPosition(false);
-    }
-    
-    if(navRef.current.getBoundingClientRect().top < 0){
-      return setNavPosition(true);
-      
-    }
-    
-  };
-
-  console.log(navPosition);
-
-  useEffect(() => {
-    window.addEventListener("scroll", scrollHandler, true);
-    return () => {
-      window.removeEventListener("scroll", scrollHandler, true);
-    };
-  }, []); */
-
   const Element = Scroll.Element;
 
-
   return (
-
-    <NavBarContainer id="navbar" /* ref={navRef} */>
+    <NavBarContainer>
       
       <Element name="anchor">
         <Logo src={karabalogo} alt='KARABA FC' />
       </Element>
       
-      <NavBar className=''>
+      <NavBar>
 
-        <NavLinkStyled to="/" /* onMouseLeave={dropDownActive} onMouseEnter={dropDownDisable} */>TOUR</NavLinkStyled>
-        <NavLinkStyled to="/music" >MUSIC</NavLinkStyled>
-        <NavLinkStyled to="/merchandise" >MERCHANDISE</NavLinkStyled>
-        <NavLinkStyled to="/contact" >BIO & CONTACT</NavLinkStyled>
+        <NavLinkStyled to="/">TOUR</NavLinkStyled>
+        <NavLinkStyled to="/music">MUSIC</NavLinkStyled>
+        <NavLinkStyled to="/merchandise">MERCHANDISE</NavLinkStyled>
+        <NavLinkStyled to="/contact">BIO & CONTACT</NavLinkStyled>
 
       </NavBar>
 
+      
+
     </NavBarContainer>
+
   )
 }

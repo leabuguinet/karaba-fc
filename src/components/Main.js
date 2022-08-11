@@ -6,12 +6,11 @@ import {
 } from "react-router-dom";
 
 import styled from "styled-components";
-import { Transition, TransitionGroup } from 'react-transition-group';
-
-import { CSSTransition } from 'react-transition-group';
 
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion"
+
+import { device } from "../global/Breakpoints";
 
 import Nav from './Nav';
 import Tour from './Tour';
@@ -26,7 +25,16 @@ const MainContainer = styled.main`
     flex-wrap: wrap;
     margin: 0 auto;
     max-width: 1280px;
-    width: 80%;
+    width: 85%;
+
+    @media ${device.tabletL} { 
+      justify-content: center;
+    }
+
+    @media ${device.mobileL} { 
+      width: 95%;
+    }
+
 `
 
 function Main() {

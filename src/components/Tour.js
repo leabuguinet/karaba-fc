@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from "styled-components"
 import EventCard from './EventCard'
-import data from './data/data.json'
+import data from '../assets/data/data.json'
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -13,7 +13,7 @@ const EventCardsContainer = styled.div`
 const pageVariants = {
   initial: {
     opacity: 0,
-    y: 200,
+    y: 0,
     scale: 0.8
   },
   in: {

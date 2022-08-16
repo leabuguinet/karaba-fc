@@ -35,15 +35,21 @@ const MainContainer = styled.main`
       width: 95%;
     }
 
+     > div {
+      @media ${device.mobileL} { 
+      width: 95%;
+      }
+    }
+
 `
 
 function Main() {
 
   const pageStyle = {
     height: "auto",
-    maxWidth: "70%",
-    minWidth: "50%",
-    marginTop: "5rem"
+    //maxWidth: "70%",
+    //minWidth: "50%",
+    marginTop: "5rem",
   };
 
   return (

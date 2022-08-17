@@ -26,8 +26,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'League Spartan', sans-serif;
   }
 
-  h1 {
+  h1, h2, h3, p{
     color: #ffffff;
+  }
+
+  h1 {
     text-transform: uppercase;
     margin-bottom: 5rem;
     //font-size: 2rem;
@@ -41,10 +44,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    color: #ffffff;
     margin-bottom: 3rem;
     font-size: 1rem;
-    font-size: clamp(1rem, 0.8333333333333334rem + 0.8333333333333334vw, 1.5rem);
+    font-size: clamp(1rem, 0.9333333333333333rem + 1.3333333333333335vw, 1.5rem);
+  }
+
+  p {
+    font-size: 0.8rem;
+    font-size: clamp(0.8rem, 0.9333333333333333rem + 1.3333333333333335vw, 1rem);
   }
 
   .p-mb{

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
+import { device } from "../global/Breakpoints";
 
 import KarabaFooterImg from '../assets/images/jorge-vasconez.jpg'
 import KarabaFooterImg2 from '../assets/images/sarah-lee.jpg'
@@ -63,6 +64,12 @@ const Icons = styled.div`
 
   stop {
     transition: 1s;
+  }
+
+  @media ${device.mobileM} { 
+    svg {
+      width: 40px;
+    }
   }
   
 `

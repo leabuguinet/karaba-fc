@@ -32,12 +32,16 @@ const MainContainer = styled.main`
     }
 
     @media ${device.mobileL} { 
-      width: 95%;
+      width: 90%;
     }
 
      > div {
+
+      margin-top: 5rem;
+
       @media ${device.mobileL} { 
       width: 95%;
+      margin-top: 2rem;
       }
     }
 
@@ -47,9 +51,7 @@ function Main() {
 
   const pageStyle = {
     height: "auto",
-    //maxWidth: "70%",
-    //minWidth: "50%",
-    marginTop: "5rem",
+    minWidth: "60%",
   };
 
   return (

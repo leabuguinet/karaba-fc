@@ -8,7 +8,7 @@ import { ReactComponent as ExtLink } from '../assets/icons/external-link.svg'
 const Card = styled.div`
     color: white;
     max-width: 500px;
-    min-width: 200px;
+
     display: flex;
     align-items: center;
     margin-bottom: 3rem;
@@ -25,7 +25,6 @@ const Card = styled.div`
 
     @media ${device.mobileL} { 
       padding: 20px;
-      min-width: 100%;
     }
 
     &::before{
@@ -78,12 +77,10 @@ const DateInfo = styled.div`
       transform: rotate(15deg);
       font-size: 4rem;
       @media ${device.mobileXL} { 
-        top: 0;
+        top: 2px;
         left: 0;
         font-size: 1.5rem;
       }
-
-      
     }
 
     //Month
@@ -96,8 +93,6 @@ const DateInfo = styled.div`
         left: 0;
       }
     }
-
-  
 `
 
 const Description = styled.div`
@@ -105,23 +100,31 @@ const Description = styled.div`
   margin-left: 2rem;
 
   h2 {
-    //font-size: 1.5rem;
     font-weight: 400;
     margin: 0;
-/*     @media ${device.mobileL} { 
-        font-size: 0.8rem;
-    } */
   }
 
   a {
     color: #ffffff;
     fill: #ffffff;
     text-decoration: none;
+
+    &:hover svg .link-arrow {
+      transform: translate(30px, -30px);
+    }
   }
 
   svg {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
+    @media ${device.mobileXL} { 
+      width: 15px;
+      height: 15px;
+    }
+
+    & .link-arrow {
+      transition:  ease 0.5s ;
+    }
   }
 `
 

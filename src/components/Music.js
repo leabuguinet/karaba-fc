@@ -2,7 +2,11 @@ import React from 'react'
 import styled from "styled-components"
 import YoutubeEmbed from './YoutubeEmbed'
 
+import Album from './Album';
 import { device } from "../global/Breakpoints";
+
+import emptyRooms from '../assets/images/Karaba-F.C-Empty-Rooms_Cover_Discogs.jpg';
+import afterParty from '../assets/images/Karaba-F.C-After-Party.jpg';
 
 import { ReactComponent as YtIcon } from '../assets/icons/icon-youtube.svg';
 import { ReactComponent as AmIcon } from '../assets/icons/icon-applemusic.svg';
@@ -16,8 +20,18 @@ const KarabaClipUrl = "zPwLwzbASlk";
 const MusicContainer = styled.div`
   display: flex;
   flex-direction: column;
-  
+
+  span {
+    font-weight: 600;
+  }
 `
+
+const AlbumList = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
+
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -77,23 +91,31 @@ const Music = ( { pageStyle } ) => {
     exit={{ opacity: 0 }}
     variants={pageVariants}
     transition={pageTransition}
-    >
-      <h1>Music</h1>
-
-      <h2>Streaming</h2>
-
-      <p>L'EP <span>Empty Rooms</span> est disponible sur les plateformes de streaming suivantes :</p>
-
-      <Icons>
-        <a href='#'><SpoIcon /></a>
-        <a href='#'><AmIcon /></a>
-        <a href='#'><BcIcon /></a>
-        <a href='#'><YtIcon /></a>
-      </Icons>
-
-      <h2>Vidéos</h2>
+    > 
       <MusicContainer>
-        
+        <h1>Music</h1>
+
+        <h2>EP - Single</h2>
+
+          <AlbumList>
+            <Album cover={emptyRooms} />
+            <Album cover={afterParty} />
+          </AlbumList>
+
+        <h2>Streaming</h2>
+
+        <p>L'EP <span>Empty Rooms</span> est disponible sur les plateformes de streaming&nbsp;suivantes&nbsp;:</p>
+
+        <Icons>
+          <a href='#'><SpoIcon /></a>
+          <a href='#'><AmIcon /></a>
+          <a href='#'><BcIcon /></a>
+          <a href='#'><YtIcon /></a>
+        </Icons>
+
+        <h2>Vidéos</h2>
+
+          
         <YoutubeEmbed embedId={KarabaClipUrl}/>
 
       </MusicContainer>

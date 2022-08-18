@@ -49,15 +49,15 @@ const Tour = ( { pageStyle } ) => {
     transition={pageTransition}
     >
 
+    <EventCardsContainer>
+
       <h1>Tour</h1>
 
-        <EventCardsContainer>
-
-          { data.map( (data) => {
-              return <EventCard data={data} key={data.id}/>
-            })
-          }
-        </EventCardsContainer>
+      { data.map( (data) => {
+          return <EventCard data={data} key={data.id}/>
+        })
+      }
+    </EventCardsContainer>
 
     </motion.div>
   )

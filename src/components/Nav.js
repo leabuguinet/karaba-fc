@@ -13,7 +13,7 @@ const toggleHover = () => setHovered(!hovered); */
 
 const NavBarContainer = styled.nav`
   height: 600px;
-  min-width: 10%;
+  width: 30%;
   position: sticky;
   top: 10px;
 
@@ -208,8 +208,8 @@ export default function Nav() {
       <NavBar>
 
         <NavLinkStyled to="/">TOUR</NavLinkStyled>
-        <NavLinkStyled to="/music">MUSIC</NavLinkStyled>
-        <NavLinkStyled to="/merchandise">MERCHANDISE</NavLinkStyled>
+        <NavLinkStyled to="/music">MUSIQUE</NavLinkStyled>
+        <NavLinkStyled to="/merchandise">MARCHANDISE</NavLinkStyled>
         <NavLinkStyled to="/contact">BIO & CONTACT</NavLinkStyled>
 
       </NavBar>

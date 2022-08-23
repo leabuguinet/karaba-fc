@@ -2,11 +2,10 @@ import React from 'react'
 import styled from "styled-components"
 import YoutubeEmbed from './YoutubeEmbed'
 
+import dataAlbums from '../assets/data/data-albums.json'
+
 import Album from './Album';
 import { device } from "../global/Breakpoints";
-
-import emptyRooms from '../assets/images/Karaba-F.C-Empty-Rooms_Cover_Discogs.jpg';
-import afterParty from '../assets/images/Karaba-F.C-After-Party.jpg';
 
 import { ReactComponent as YtIcon } from '../assets/icons/icon-youtube.svg';
 import { ReactComponent as AmIcon } from '../assets/icons/icon-applemusic.svg';
@@ -17,18 +16,19 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const KarabaClipUrl = "zPwLwzbASlk";
 
-const MusicContainer = styled.div`
+const MusicContainer = styled(motion.div)`
+  width: 70%;
   display: flex;
   flex-direction: column;
 
-  span {
-    font-weight: 600;
-  }
 `
 
 const AlbumList = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 10px;
 `
 
 
@@ -78,28 +78,29 @@ const Icons = styled.div`
   
 `
 
-const Music = ( { pageStyle } ) => {
+const Music = () => {
 
 
   return (
 
-    <motion.div
-    key="2"
-    style={pageStyle}
-    initial="initial"
-    animate="in"
-    exit={{ opacity: 0 }}
-    variants={pageVariants}
-    transition={pageTransition}
-    > 
-      <MusicContainer>
-        <h1>Music</h1>
+      <MusicContainer 
+          as={motion.div}
+          key="2"
+          initial="initial"
+          animate="in"
+          exit={{ opacity: 0 }}
+          variants={pageVariants}
+          transition={pageTransition}
+      >
+        <h1>Musique</h1>
 
         <h2>EP - Single</h2>
 
           <AlbumList>
-            <Album cover={emptyRooms} />
-            <Album cover={afterParty} />
+            { dataAlbums.map( (data) => {
+              return <Album data={data} key={data.id}/>
+              })
+            }
           </AlbumList>
 
         <h2>Streaming</h2>
@@ -119,8 +120,6 @@ const Music = ( { pageStyle } ) => {
         <YoutubeEmbed embedId={KarabaClipUrl}/>
 
       </MusicContainer>
-
-    </motion.div>
   )
 }
 

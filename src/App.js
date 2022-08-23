@@ -15,7 +15,7 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Tour from './components/Tour';
 import Merchandise from './components/Merchandise';
-import Contact from './components/Contact';
+import BioContact from './components/BioContact';
 import Music from './components/Music';
 
 
@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     text-transform: uppercase;
+    text-align: center;
     margin-bottom: 5rem;
     //font-size: 2rem;
     font-size: 1.2rem;
@@ -44,18 +45,27 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    margin-bottom: 3rem;
+    margin: 3rem 0;
     font-size: 1rem;
     font-size: clamp(1rem, 0.9333333333333333rem + 1.3333333333333335vw, 1.5rem);
   }
 
   p {
+    line-height: 1.3;
     font-size: 0.8rem;
     font-size: clamp(0.8rem, 0.9333333333333333rem + 1.3333333333333335vw, 1rem);
   }
 
   .p-mb{
     margin-bottom: 3rem;
+  }
+
+  span {
+    font-weight: 600;
+  }
+
+  .container {
+    width: 75%;
   }
 
 `
@@ -79,7 +89,7 @@ function App() {
             <Route path="/" element={<Tour />}/>
             <Route path="/music" element={<Music />} />
             <Route path="/merchandise" element={<Merchandise />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/bio-contact" element={<BioContact />} />
 
             <Route path="*" element={<Navigate to="/"/>} />
 

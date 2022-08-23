@@ -26,6 +26,8 @@ const FooterContainer = styled.footer`
   justify-content: center;
   align-items: center;
 
+  margin-top: 2rem;
+
 `
 
 const Icons = styled.div`

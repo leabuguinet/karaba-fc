@@ -7,7 +7,8 @@ import { ReactComponent as ExtLink } from '../assets/icons/external-link.svg'
 
 const Card = styled.div`
     color: white;
-    max-width: 500px;
+    width: 50%;
+    //min-width: 400px;
 
     display: flex;
     align-items: center;
@@ -22,7 +23,10 @@ const Card = styled.div`
                 inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03);
     background: rgba(255, 255, 255, 0.05);
     transition: background-color ease-in-out 0.5s;
-
+    
+    @media ${device.tabletL} { 
+      width: 90%;
+    }
     @media ${device.mobileL} { 
       padding: 20px;
     }
@@ -51,7 +55,8 @@ const DateInfo = styled.div`
     display: inline;
     color: white;
     width: auto;
-    min-width: 60px;
+    min-width: 90px;
+
 
     //Day
     span{

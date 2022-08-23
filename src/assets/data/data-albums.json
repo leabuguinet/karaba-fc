@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "title": "Empty Rooms",
+        "cover": "/images/Karaba-F.C-Empty-Rooms_Cover_Discogs.jpg",
+        "recording": "Studio Firgun - Charles de Montalembert - Tom Fonty",
+        "mix": "Charles de Montalembert",
+        "mastering": "Serge Morattel à Rec Studio",
+        "authors": "KARABA FC",
+        "releaseDate": "15/12/21",
+        "label1": "Atypeek Music",
+        "label1Link": "https://www.atypeekmusic.com/",
+        "label2": "A la dérive Records",
+        "label2Link": "https://aladerivemedia.wordpress.com/",
+        "buyLink" : "https://karabafc.bandcamp.com/album/empty-rooms"
+
+    },
+
+    {
+        "id": "2",
+        "title": "After Party",
+        "cover": "/images/Karaba-F.C-After-Party.jpeg",
+        "recording": "Studio Firgun - Charles de Montalembert - Tom Fonty",
+        "mix": "Charles de Montalembert",
+        "mastering": "Serge Morattel à Rec Studio",
+        "authors": "KARABA FC",
+        "releaseDate": "23/09/21",
+        "label1": "Atypeek Music",
+        "label1Link": "https://www.atypeekmusic.com/",
+        "label2": "A la dérive Records",
+        "label2Link": "https://aladerivemedia.wordpress.com/",
+        "buyLink" : "https://karabafc.bandcamp.com/album/after-party-single"
+
+    }
+
+    
+]

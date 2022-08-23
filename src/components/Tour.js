@@ -1,14 +1,21 @@
 import React, { useState } from 'react'
 import styled from "styled-components"
 import EventCard from './EventCard'
-import data from '../assets/data/data.json'
+import dataDates from '../assets/data/data-dates.json'
 
 import { AnimatePresence, motion } from "framer-motion";
 
 
-const EventCardsContainer = styled.div`
+const EventCardsContainer = styled(motion.div)`
+  width: 70%;
   display: flex;
   flex-direction: column;
+
+   > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `
 const pageVariants = {
   initial: {
@@ -39,27 +46,25 @@ const Tour = ( { pageStyle } ) => {
 
   return (
 
-    <motion.div
-    key="1"
-    style={pageStyle}
-    initial="initial"
-    animate="in"
-    exit={{ opacity: 0 }}
-    variants={pageVariants}
-    transition={pageTransition}
+    <EventCardsContainer 
+      as={motion.div}
+      key="1"
+      initial="initial"
+      animate="in"
+      exit={{ opacity: 0 }}
+      variants={pageVariants}
+      transition={pageTransition}
     >
-
-    <EventCardsContainer>
 
       <h1>Tour</h1>
 
-      { data.map( (data) => {
-          return <EventCard data={data} key={data.id}/>
-        })
-      }
+      <div>
+        { dataDates.map( (data) => {
+            return <EventCard data={data} key={data.id}/>
+          })
+        }
+      </div>
     </EventCardsContainer>
-
-    </motion.div>
   )
 }
 

@@ -18,9 +18,9 @@ const Card = styled.div`
     border-radius: 20px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: inset -1px 0px 2px rgba(0,27,92,0.35),
+    /* box-shadow: inset -1px 0px 2px rgba(0,27,92,0.35),
                 inset 0px 1px 2px rgba(0,27,92,0.35),
-                inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03);
+                inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03); */
     background: rgba(255, 255, 255, 0.05);
     transition: background-color ease-in-out 0.5s;
     
@@ -52,7 +52,9 @@ const Card = styled.div`
 `
 
 const DateInfo = styled.div`
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: white;
     width: auto;
     min-width: 90px;
@@ -60,7 +62,7 @@ const DateInfo = styled.div`
 
     //Day
     span{
-      position: relative;
+      line-height: 1.2;
       font-size: 2rem;
       font-weight: 600;
       top: -23px;
@@ -73,31 +75,11 @@ const DateInfo = styled.div`
       font-size: clamp(1rem, 0.8333333333333334rem + 0.8333333333333334vw, 1.5rem);
     }
 
-    //Separator
-    span:nth-child(2){
-      //font-size: 4rem;
-      left: 0px;
-      top: 4px;
-      font-weight: 100;
-      transform: rotate(15deg);
-      font-size: 4rem;
-      @media ${device.mobileXL} { 
-        top: 2px;
-        left: 0;
-        font-size: 1.5rem;
-      }
-    }
-
-    //Month
     span:last-child{
-      left: -10px;
-      top: 13px;
-
-      @media ${device.mobileXL} { 
-        top: 0;
-        left: 0;
-      }
+      color: #81aecb;
+      letter-spacing: 2px
     }
+
 `
 
 const Description = styled.div`
@@ -140,7 +122,8 @@ const EventCard = ({data}) => {
     <Card>
       <DateInfo>
 
-        <span>{data.day}</span> <span>/</span> <span>{data.month}</span>
+        <span>{data.day}/{data.month}</span>
+        <span>{data.year}</span>
 
       </DateInfo>
       <Description>

@@ -4,8 +4,7 @@ import styled from "styled-components";
 
 const MentionsContainer = styled.div`
     color: #ffffff;
-    max-width: 70%;
-    min-width: 50%;
+    flex: 1;
     margin-top: 5rem;
 `
 

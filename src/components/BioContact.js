@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import KarabaFCGig from '../assets/images/Karaba-F.C-gig.jpg';
 
 const BioContactContainer = styled(motion.div)`
-  width: 70%;
+  flex: 1;
   display: flex;
   flex-direction: column;
 

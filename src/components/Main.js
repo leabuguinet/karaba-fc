@@ -31,17 +31,17 @@ const MainContainer = styled.main`
       justify-content: center;
     }
 
-    @media ${device.mobileL} { 
+    /* @media ${device.mobileL} { 
       width: 90%;
-    }
+    } */
 
-     > div {
+    > div {
 
       margin-top: 5rem;
 
-      @media ${device.mobileL} { 
-      width: 95%;
-      margin-top: 2rem;
+      @media ${device.desktop} { 
+        padding: 0 5rem;
+        margin-top: 2rem;
       }
     }
 
@@ -66,7 +66,7 @@ function Main() {
             <Route path="/" element={<Tour/>}/>
             <Route path="/musique" element={<Music/>} />
             <Route path="/marchandise" element={<Merchandise/>} />
-            <Route path="/contact" element={<Contact/>} />
+            <Route path="/bio-contact" element={<Contact/>} />
             <Route path="/mentions" element={<Mentions/>} />
 
             <Route path="*" element={<Navigate to="/"/>} />

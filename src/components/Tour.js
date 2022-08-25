@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 
 const EventCardsContainer = styled(motion.div)`
-  width: 70%;
+  flex: 1;
   display: flex;
   flex-direction: column;
 
@@ -41,8 +41,43 @@ const pageTransition = {
   duration: 0.8
 };
 
+let currentYear = new Date().getFullYear().toString();
+let currentMonth = (new Date().getMonth() + 1).toString();
+let currentDay = new Date().getDate().toString();
+let passedGig = [];
+let nextGig = [];
 
-const Tour = ( { pageStyle } ) => {
+{ dataDates.map( (data) => {
+  let gigYear = data.year.toString();
+  let gigMonth = parseInt(data.month.toString(), 10);
+  let gigDay = parseInt(data.day.toString(), 10);
+
+  if(gigYear === currentYear){
+
+    if(gigMonth > currentMonth){
+
+      return nextGig.push(data)
+    } 
+    
+    if (gigMonth == currentMonth){
+
+      if(gigDay >= currentDay){
+
+        return nextGig.push(data)
+      }
+      return passedGig.push(data)
+    }
+
+  } else if (gigYear > currentYear){
+
+      return nextGig.push(data)
+  }
+
+  return passedGig.push(data)
+})
+}
+
+const Tour = () => {
 
   return (
 
@@ -56,14 +91,28 @@ const Tour = ( { pageStyle } ) => {
       transition={pageTransition}
     >
 
-      <h1>Tour</h1>
+      <h1>Dates à venir</h1>
 
       <div>
-        { dataDates.map( (data) => {
-            return <EventCard data={data} key={data.id}/>
+        { nextGig.map( (data) => {
+    
+          return <EventCard data={data} key={data.id}/>
+
           })
         }
       </div>
+
+      <h1>Dates passées</h1>
+
+      <div>
+        { passedGig.map( (data) => {
+    
+          return <EventCard data={data} key={data.id}/>
+
+          })
+        }
+      </div>
+
     </EventCardsContainer>
   )
 }

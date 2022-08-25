@@ -208,9 +208,9 @@ export default function Nav() {
       <NavBar>
 
         <NavLinkStyled to="/">TOUR</NavLinkStyled>
-        <NavLinkStyled to="/music">MUSIQUE</NavLinkStyled>
-        <NavLinkStyled to="/merchandise">MARCHANDISE</NavLinkStyled>
-        <NavLinkStyled to="/contact">BIO & CONTACT</NavLinkStyled>
+        <NavLinkStyled to="/musique">MUSIQUE</NavLinkStyled>
+        <NavLinkStyled to="/marchandise">MARCHANDISE</NavLinkStyled>
+        <NavLinkStyled to="/bio-contact">BIO & CONTACT</NavLinkStyled>
 
       </NavBar>
 

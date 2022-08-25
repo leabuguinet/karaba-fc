@@ -11,13 +11,7 @@ import { useEffect, useState, useRef, useLayoutEffect } from 'react';
 import { device } from './global/Breakpoints';
 import Main from './components/Main';
 import Header from './components/Header';
-import Nav from './components/Nav';
 import Footer from './components/Footer';
-import Tour from './components/Tour';
-import Merchandise from './components/Merchandise';
-import BioContact from './components/BioContact';
-import Music from './components/Music';
-
 
 const GlobalStyle = createGlobalStyle`
 
@@ -69,8 +63,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
 `
-
-
 function App() {
 
   return (
@@ -81,20 +73,7 @@ function App() {
 
         <Header />
 
-        <Main className="container">
-          <Nav />
-
-          <Routes>
-
-            <Route path="/" element={<Tour />}/>
-            <Route path="/music" element={<Music />} />
-            <Route path="/merchandise" element={<Merchandise />} />
-            <Route path="/bio-contact" element={<BioContact />} />
-
-            <Route path="*" element={<Navigate to="/"/>} />
-
-          </Routes>
-        </Main>
+        <Main />
 
         <Footer/>
       

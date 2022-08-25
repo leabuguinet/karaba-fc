@@ -6,7 +6,7 @@ import KarabaK7 from '../assets/images/Karaba-F.C-k7.jpeg';
 import KarabaTshirt from '../assets/images/Karaba-F.C-tshirt.jpeg';
 
 const MerchandiseContainer = styled(motion.div)`
-  width: 70%;
+  flex: 1;
   display: flex;
   flex-direction: column;
 

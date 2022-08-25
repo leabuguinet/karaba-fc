@@ -17,7 +17,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const KarabaClipUrl = "zPwLwzbASlk";
 
 const MusicContainer = styled(motion.div)`
-  width: 70%;
+  flex: 1;
   display: flex;
   flex-direction: column;
 
@@ -94,7 +94,7 @@ const Music = () => {
       >
         <h1>Musique</h1>
 
-        <h2>EP - Single</h2>
+        <h2>EP</h2>
 
           <AlbumList>
             { dataAlbums.map( (data) => {
@@ -103,20 +103,15 @@ const Music = () => {
             }
           </AlbumList>
 
-        <h2>Streaming</h2>
-
-        <p>L'EP <span>Empty Rooms</span> est disponible sur les plateformes de streaming&nbsp;suivantes&nbsp;:</p>
-
-        <Icons>
-          <a href='#'><SpoIcon /></a>
-          <a href='#'><AmIcon /></a>
-          <a href='#'><BcIcon /></a>
-          <a href='#'><YtIcon /></a>
-        </Icons>
+          <Icons>
+            <a href='#'><SpoIcon /></a>
+            <a href='#'><AmIcon /></a>
+            <a href='#'><BcIcon /></a>
+            <a href='#'><YtIcon /></a>
+          </Icons>
 
         <h2>Vidéos</h2>
 
-          
         <YoutubeEmbed embedId={KarabaClipUrl}/>
 
       </MusicContainer>

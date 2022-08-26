@@ -94,6 +94,11 @@ const NavLinkStyled = styled(NavLink)`
   }
 
   //PHONE
+
+  @media ${device.mobileXL} { 
+    text-align: center;
+    font-size: 0.8rem;
+  }
   @media ${device.mobileL} { 
     text-align: center;
     font-size: 0.8rem;
@@ -113,9 +118,16 @@ const NavLinkStyled = styled(NavLink)`
       right: 150px;
       bottom: 3px;
       content:'';
+      
+      @media ${device.mobileXL} { 
+        width: 10px; 
+        height: 10px;
+      }
 
       @media ${device.tabletL} { 
         left: 100%;
+        width: 10px; 
+        height: 10px;
       }
 
       @media ${device.mobileL} { 
@@ -139,10 +151,17 @@ const NavLinkStyled = styled(NavLink)`
     transition: all 0.2s ease-in-out;
     bottom: 123px;
 
-    @media ${device.tabletL} { 
-      left: 100%;
+
+    @media ${device.mobileXL} { 
+        width: 10px; 
+        height: 10px;
     }
 
+    @media ${device.tabletL} { 
+      width: 10px; 
+      height: 10px;
+      left: 100%;
+    }
 
     @media ${device.mobileL} { 
       width: 8px; 
@@ -209,8 +228,8 @@ export default function Nav() {
 
         <NavLinkStyled to="/">TOUR</NavLinkStyled>
         <NavLinkStyled to="/musique">MUSIQUE</NavLinkStyled>
-        <NavLinkStyled to="/marchandise">MARCHANDISE</NavLinkStyled>
-        <NavLinkStyled to="/bio-contact">BIO & CONTACT</NavLinkStyled>
+        <NavLinkStyled to="/merchandise">MERCHANDISE</NavLinkStyled>
+        <NavLinkStyled to="/contact">CONTACT</NavLinkStyled>
 
       </NavBar>
 

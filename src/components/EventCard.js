@@ -7,7 +7,7 @@ import { ReactComponent as ExtLink } from '../assets/icons/external-link.svg'
 
 const Card = styled.div`
     color: white;
-    width: 50%;
+    width: 60%;
     //min-width: 400px;
 
     display: flex;
@@ -87,8 +87,33 @@ const Description = styled.div`
   margin-left: 2rem;
 
   h2 {
-    font-weight: 400;
     margin: 0;
+
+    @media ${device.mobileL} {
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      flex-direction: column;
+
+      span {
+        margin-top: 10px;
+      }
+      span.point {
+        display: none;
+      }
+    }
+
+    span {
+      margin-right: 4px;
+      font-weight: 400;
+        
+      .location {
+          font-size: 0.8rem;
+          font-size: clamp(0.8rem, 0.9333333333333333rem + 1.3333333333333335vw, 1.5rem);
+      }
+
+    }
   }
 
   a {
@@ -128,7 +153,12 @@ const EventCard = ({data}) => {
       </DateInfo>
       <Description>
 
-        <h2>{data.city} • {data.location} {data.time && <span>• {data.time} </span>} {data.eventlink && <a href={data.eventlink}> • <ExtLink /></a>}</h2>
+        <h2>
+          <span>{data.city}</span><span className='point'>•</span>
+          <span className="location">{data.location}</span><span className='point'>•</span>
+          <span>{data.eventlink && <a href={data.eventlink}>   <ExtLink /></a>}</span>
+          
+        </h2>
         
         {data.description && <p>{data.description}</p>}
 

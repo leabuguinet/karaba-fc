@@ -24,7 +24,8 @@ const HeaderDiv = styled.header`
 `
 
 const Logo = styled.img`
-    width: 350px;
+    max-width: 350px;
+    width: 80%;
 `
 
 const ButtonScroll = styled.div`

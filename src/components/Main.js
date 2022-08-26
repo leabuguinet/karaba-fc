@@ -15,7 +15,7 @@ import { device } from "../global/Breakpoints";
 import Nav from './Nav';
 import Tour from './Tour';
 import Merchandise from './Merchandise';
-import Contact from './BioContact';
+import Contact from './Contact';
 import Music from './Music';
 import Mentions from "./Mentions";
 
@@ -40,7 +40,7 @@ const MainContainer = styled.main`
       margin-top: 5rem;
 
       @media ${device.desktop} { 
-        padding: 0 5rem;
+        max-width: 85%;
         margin-top: 2rem;
       }
     }
@@ -65,8 +65,8 @@ function Main() {
 
             <Route path="/" element={<Tour/>}/>
             <Route path="/musique" element={<Music/>} />
-            <Route path="/marchandise" element={<Merchandise/>} />
-            <Route path="/bio-contact" element={<Contact/>} />
+            <Route path="/merchandise" element={<Merchandise/>} />
+            <Route path="/contact" element={<Contact/>} />
             <Route path="/mentions" element={<Mentions/>} />
 
             <Route path="*" element={<Navigate to="/"/>} />

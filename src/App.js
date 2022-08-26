@@ -40,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     margin: 3rem 0;
+    font-weight: 400;
     font-size: 1rem;
     font-size: clamp(1rem, 0.9333333333333333rem + 1.3333333333333335vw, 1.5rem);
   }

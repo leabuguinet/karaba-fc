@@ -91,7 +91,7 @@ const Tour = () => {
       transition={pageTransition}
     >
 
-      <h1>Dates à venir</h1>
+      <h1>Prochaines dates</h1>
 
       <div>
         { nextGig.map( (data) => {

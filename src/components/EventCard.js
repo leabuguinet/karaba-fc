@@ -1,6 +1,5 @@
-import React, { useState, useCallback } from 'react'
-import styled, { StyledComponent } from 'styled-components'
-import { CSSTransitionGroup, Transition, CSSTransition } from 'react-transition-group'
+import React from 'react'
+import styled from 'styled-components'
 import { device } from "../global/Breakpoints";
 
 import { ReactComponent as ExtLink } from '../assets/icons/external-link.svg'
@@ -9,7 +8,7 @@ const Card = styled.div`
     color: white;
     width: 60%;
     //min-width: 400px;
-
+    position: relative;
     display: flex;
     align-items: center;
     margin-bottom: 3rem;
@@ -18,9 +17,6 @@ const Card = styled.div`
     border-radius: 20px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    /* box-shadow: inset -1px 0px 2px rgba(0,27,92,0.35),
-                inset 0px 1px 2px rgba(0,27,92,0.35),
-                inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03); */
     background: rgba(255, 255, 255, 0.05);
     transition: background-color ease-in-out 0.5s;
     
@@ -41,7 +37,8 @@ const Card = styled.div`
       left: 0;
       border-radius: 20px;
       background: rgb(0,0,26);
-      background: linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(0,51,153,0.6012780112044818) 100%);
+      background: -webkit-linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(0,51,153,0.6012780112044818));
+      background: linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(0,51,153,0.6012780112044818));
       opacity: 0;
       transition: opacity 0.4s linear;
     }

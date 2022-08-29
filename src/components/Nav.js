@@ -29,6 +29,7 @@ const NavBarContainer = styled.nav`
   //PHONE
   @media ${device.mobileL} { 
     flex-direction: row;
+    justify-content: space-evenly;
     z-index: 20;
     position: sticky;
     //background-color:  #00001a;
@@ -51,8 +52,9 @@ const NavBar = styled.div`
     flex-direction: row;
     justify-content: space-between;
     //background-color:  #00001a;
-    width: 100%;
+    //width: 100%;
     gap: 10px;
+    width: 70%;
   }
 
   @media ${device.mobileL} { 
@@ -118,6 +120,7 @@ const NavLinkStyled = styled(NavLink)`
       right: 150px;
       bottom: 3px;
       content:'';
+
       
       @media ${device.mobileXL} { 
         width: 10px; 
@@ -125,9 +128,11 @@ const NavLinkStyled = styled(NavLink)`
       }
 
       @media ${device.tabletL} { 
-        left: 100%;
+        left: calc(50% - 5px);
+        top: 15px;
         width: 10px; 
         height: 10px;
+        display: none;
       }
 
       @media ${device.mobileL} { 
@@ -160,7 +165,8 @@ const NavLinkStyled = styled(NavLink)`
     @media ${device.tabletL} { 
       width: 10px; 
       height: 10px;
-      left: 100%;
+      left: calc(50% - 5px);
+      bottom: 109px;
     }
 
     @media ${device.mobileL} { 

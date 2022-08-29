@@ -3,11 +3,8 @@ import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
 import { device } from "../global/Breakpoints";
 
-import KarabaFooterImg from '../assets/images/jorge-vasconez.jpg'
-import KarabaFooterImg2 from '../assets/images/sarah-lee.jpg'
 import KarabaFooterImg3 from '../assets/images/marcos-paulo-prado.jpg'
 
-//import IgIcon from '../assets/images/icon-instagram.svg'
 import { ReactComponent as IgIcon } from '../assets/icons/icon-instagram.svg';
 import { ReactComponent as FbIcon } from '../assets/icons/icon-facebook.svg';
 import { ReactComponent as BcIcon } from '../assets/icons/icon-bandcamp.svg';
@@ -37,30 +34,30 @@ const Icons = styled.div`
   gap: 40px;
 
   a svg.logo-1 path {
-    fill: url(#logo-gradient1) #447799;
+    fill: url(#logo-gradient1) #81aecb;
 	}
 
   a svg.logo-2 path {
-    fill: url(#logo-gradient2) #447799;
+    fill: url(#logo-gradient2) #81aecb;
 	}
 
   a svg.logo-3 path {
-    fill: url(#logo-gradient3) #447799;
+    fill: url(#logo-gradient3) #ffffff;
 	}
 
   svg:hover{
       transform: scale(1.08);
   }
 
-  svg.logo-1, svg.logo-2, svg.logo-3{
+  svg.logo-1, svg.logo-2, svg.logo-3 {
     transition: 1s ease-in-out;
 
     &:hover stop:first-child {
-    stop-color: #466ec3;
+    stop-color: #81aecb;
     }
 
     &:hover stop:last-child {
-      stop-color: #466ec3;
+      stop-color: #81aecb;
     }
   }
 
@@ -88,7 +85,7 @@ export default function Footer() {
     <FooterContainer>
 
       <Icons>
-        <a href='#'><IgIcon /></a>
+        <a href='https://instagram.com/karabafc?igshid=YmMyMTA2M2Y='><IgIcon /></a>
         <a href='https://www.facebook.com/KARABAFC'><FbIcon /></a>
         <a href='https://karabafc.bandcamp.com/'><BcIcon /></a>
       </Icons>

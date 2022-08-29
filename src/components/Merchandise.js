@@ -1,9 +1,9 @@
-import React from 'react'
-import styled from "styled-components"
-import { AnimatePresence, motion } from "framer-motion"
+import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 
-import KarabaK7 from '../assets/images/Karaba-F.C-k7.jpeg';
-import KarabaTshirt from '../assets/images/Karaba-F.C-tshirt.jpeg';
+import KarabaK7 from "../assets/images/Karaba-F.C-k7.jpeg";
+import KarabaTshirt from "../assets/images/Karaba-F.C-tshirt.jpeg";
 import { device } from "../global/Breakpoints";
 
 const MerchandiseContainer = styled(motion.div)`
@@ -23,13 +23,11 @@ const MerchandiseContainer = styled(motion.div)`
     border-radius: 20px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    /* box-shadow: inset -1px 0px 2px rgba(0,27,92,0.35),
-                inset 0px 1px 2px rgba(0,27,92,0.35),
-                inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03); */
     background: rgba(255, 255, 255, 0.05);
     transition: background-color ease-in-out 0.5s;
-    
-    &::before{
+    position: relative;
+
+    &::before {
       z-index: -1;
       position: absolute;
       content: "";
@@ -38,43 +36,54 @@ const MerchandiseContainer = styled(motion.div)`
       bottom: 0;
       left: 0;
       border-radius: 20px;
-      background: rgb(0,0,26);
-      background: linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(0,51,153,0.6012780112044818) 100%);
-      opacity: 0;
+      background: rgb(0, 0, 26);
+      background: -webkit-linear-gradient(
+        130deg,
+        rgba(0, 0, 26, 0) 0%,
+        rgba(0, 27, 92, 0) 42%,
+        rgba(0, 51, 153, 0.6012780112044818)
+      );
+      background: linear-gradient(
+        130deg,
+        rgba(0, 0, 26, 0) 0%,
+        rgba(0, 27, 92, 0) 42%,
+        rgba(0, 51, 153, 0.6012780112044818)
+      );
       transition: opacity 0.4s linear;
+      opacity: 0;
     }
-    &:hover::before{
+    &:hover::before {
       opacity: 0.5;
     }
 
-    @media ${device.mobileXL} { 
+    @media ${device.mobileXL} {
       flex-direction: column;
       align-items: center;
     }
 
-    .merchandise-img{
-      width: calc(40% - 20px); 
+    .merchandise-img {
+      width: calc(40% - 20px);
       min-width: 175px;
 
       img {
         width: 100%;
         max-width: none;
 
-        @media ${device.mobileXL} { 
-        max-width: 300px;
+        @media ${device.mobileXL} {
+          max-width: 300px;
+        }
       }
+      @media ${device.tabletL} {
+        width: calc(40% - 20px);
       }
-      @media ${device.tabletL} { 
-        width: calc(40% - 20px); 
-      }
-      @media ${device.mobileXL} { 
+      @media ${device.mobileXL} {
         width: 100%;
       }
     }
-    .merchandise-description{
+    .merchandise-description {
       width: calc(60% - 20px);
 
-      @media ${device.mobileXL} { 
+      @media ${device.mobileXL} {
         width: 100%;
       }
       h2 {
@@ -84,7 +93,9 @@ const MerchandiseContainer = styled(motion.div)`
         font-weight: 400;
       }
 
-      h2, p, a {
+      h2,
+      p,
+      a {
         margin-right: 20px;
       }
 
@@ -94,16 +105,16 @@ const MerchandiseContainer = styled(motion.div)`
         font-weight: 600;
       }
 
-      a:hover{
-        color: #81aecb
+      a:hover {
+        color: #81aecb;
       }
 
-      .underline{
+      .underline {
         position: relative;
       }
 
-      .underline::before{
-        content: '';
+      .underline::before {
+        content: "";
         position: absolute;
         bottom: -2px;
         right: 0;
@@ -114,7 +125,7 @@ const MerchandiseContainer = styled(motion.div)`
       }
 
       @media (hover: hover) and (pointer: fine) {
-        .underline:hover::before{
+        .underline:hover::before {
           left: 0;
           right: auto;
           width: 100%;
@@ -122,36 +133,33 @@ const MerchandiseContainer = styled(motion.div)`
       }
     }
   }
-
-`
+`;
 const pageVariants = {
   initial: {
     opacity: 0,
     y: 0,
-    scale: 0.8
+    scale: 0.8,
   },
   in: {
     opacity: 1,
     x: 0,
-    scale: 1
+    scale: 1,
   },
   out: {
     opacity: 0,
     x: "-0vw",
-    scale: 1.2
-  }
+    scale: 1.2,
+  },
 };
 
 const pageTransition = {
   type: "tween",
   ease: "easeInOut",
-  duration: 0.8
+  duration: 0.8,
 };
-
 
 const Merchandise = () => {
   return (
-
     <MerchandiseContainer
       as={motion.div}
       key="2"
@@ -163,42 +171,50 @@ const Merchandise = () => {
     >
       <h1>Merchandise</h1>
 
-      <div className='merchandise-list'>
-
-        <div className='merchandise-item'>
-
-          <div className='merchandise-img'>
-            <img src={KarabaK7}></img>
+      <div className="merchandise-list">
+        <div className="merchandise-item">
+          <div className="merchandise-img">
+            <img src={KarabaK7} alt="K7 de Empty Rooms du goupe Karaba-F.C" />
           </div>
-          <div className='merchandise-description'>
+          <div className="merchandise-description">
             <h2>Empty Rooms K7</h2>
             <p>2ème édition, orange transparent, 30 copies</p>
             <p>Édition Limitée</p>
             <p>
-              Comprend l’écoute en continu illimitée de Empty Rooms au moyen de l’appli gratuite de Bandcamp, ainsi que le téléchargement de haute qualité aux formats MP3, FLAC et plus.
+              Comprend l’écoute en continu illimitée de Empty Rooms au moyen de
+              l’appli gratuite de Bandcamp, ainsi que le téléchargement de haute
+              qualité aux formats MP3, FLAC et plus.
             </p>
-            <a className="underline" href="https://karabafc.bandcamp.com/album/empty-rooms">Acheter via BandCamp</a>
+            <a
+              className="underline"
+              href="https://karabafc.bandcamp.com/album/empty-rooms"
+            >
+              Acheter via BandCamp
+            </a>
           </div>
-
         </div>
 
-        <div className='merchandise-item'>
-
-          <div className='merchandise-img'>
-            <img src={KarabaTshirt}></img>
+        <div className="merchandise-item">
+          <div className="merchandise-img">
+            <img
+              src={KarabaTshirt}
+              alt="K7 de Empty Rooms du goupe Karaba-F.C"
+            />
           </div>
-          <div className='merchandise-description'>
+          <div className="merchandise-description">
             <h2>Empty Rooms t-shirt</h2>
             <p>Stanley/Stella organic cotton</p>
-            <a className="underline" href="https://karabafc.bandcamp.com/album/empty-rooms">Acheter via BandCamp</a>
+            <a
+              className="underline"
+              href="https://karabafc.bandcamp.com/album/empty-rooms"
+            >
+              Acheter via BandCamp
+            </a>
           </div>
-
         </div>
-
       </div>
-
     </MerchandiseContainer>
-  )
-}
+  );
+};
 
-export default Merchandise
+export default Merchandise;

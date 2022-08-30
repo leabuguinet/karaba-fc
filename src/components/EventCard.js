@@ -82,8 +82,7 @@ const DateInfo = styled.div`
 const Description = styled.div`
 
   margin-left: 2rem;
-  line-height: 0;
-  
+
   h2 {
     margin: 0;
 

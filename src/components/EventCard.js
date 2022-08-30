@@ -11,8 +11,8 @@ const Card = styled.div`
     position: relative;
     display: flex;
     align-items: center;
-    margin-bottom: 3rem;
-    padding: 30px;
+    margin-bottom: 2rem;
+    padding: 25px;
 
     border-radius: 20px;
     backdrop-filter: blur(20px);
@@ -82,7 +82,8 @@ const DateInfo = styled.div`
 const Description = styled.div`
 
   margin-left: 2rem;
-
+  line-height: 0;
+  
   h2 {
     margin: 0;
 

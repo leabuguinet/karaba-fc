@@ -1,12 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { device } from "../global/Breakpoints"
 
 const VideoResponsive = styled.div`
   overflow: hidden;
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
+  margin: 5rem;
+
+  @media ${device.mobileXL} {
+    margin: 3rem;
+  }
+  @media ${device.mobileM} {
+    margin: 1.5rem;
+  }
+  @media ${device.mobileM} {
+    margin: 1rem;
+  }
 
   & iframe{
     left: 0;
@@ -16,8 +28,6 @@ const VideoResponsive = styled.div`
     position: absolute;
   }
 `   
-
-
 const YoutubeEmbed = ({ embedId }) => (
   <VideoResponsive>
     <iframe

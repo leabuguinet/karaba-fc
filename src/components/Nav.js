@@ -1,9 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
 import { device } from '../global/Breakpoints'
-import { animation } from '../global/Animation'
 
 import waterDropSvg from '../assets/icons/water-drop.svg'
 import karabalogo from '../assets/icons/KarabaFC-logo-white.png';
@@ -202,12 +201,19 @@ const NavLinkStyled = styled(NavLink)`
 
 `
 const Logo = styled.img`
-  width: 180px;
-  padding: 4rem 0 2rem 0;
+  width: 100px;
+  padding: 1rem 0 2rem 3rem;
   @media ${device.tabletL} { 
-    padding: 0;
-    width: 50px;
+    padding: 0 0 0 1rem;
+    width: 25px;
   }
+
+  @media ${device.mobileS} { 
+    padding: 0rem;
+    width: 20px;
+  }
+
+
 `
 
 

@@ -21,22 +21,31 @@ const EventCardsContainer = styled(motion.div)`
     margin-bottom: 1rem;
   }
 
+  .previousGigs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 2rem;
+  }
+
   
 `
 const ButtonMore = styled.button`
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   border: 2px white solid;
   background: none;
   position: relative;
-  margin: 0 auto;
-  margin-bottom: 3rem;
+  //margin: 0 auto;
+  //margin-bottom: 3rem;
+  transition: all 0.5s ease-in-out;
 
   &::before {
     content: '';
     position: absolute;
-    width: 20px;
+    width: 15px;
     height: 2px;
     background-color: white;
     left: 22.5%;
@@ -45,7 +54,7 @@ const ButtonMore = styled.button`
   &::after {
     content: '';
     position: absolute;
-    width: 20px;
+    width: 15px;
     height: 2px;
     background-color: white;
     left: 22.5%;
@@ -59,6 +68,10 @@ const ButtonMore = styled.button`
     content: '';
     rotate: 180deg;
   }
+  }
+
+  &:hover {
+    transform: rotate(180deg);
   }
 `
 
@@ -93,6 +106,7 @@ let currentDay = new Date().getDate().toString();
 let passedGig = [];
 let nextGig = [];
 
+// eslint-disable-next-line no-lone-blocks
 { dataDates.map( (data) => {
   let gigYear = data.year.toString();
   let gigMonth = parseInt(data.month.toString(), 10);
@@ -158,11 +172,8 @@ const Tour = () => {
         }
       </div>
 
-      <h2>Date passées</h2>
-      <ButtonMore onClick={(handleClick)}>
-  
+      <h2 className="previousGigs"><span>Dates précédentes</span> <ButtonMore onClick={(handleClick)} /></h2>
 
-      </ButtonMore>
       
       {isShown && (
         <div>

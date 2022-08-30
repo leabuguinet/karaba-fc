@@ -21,13 +21,12 @@ const HeaderDiv = styled.header`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    //background-attachment: scroll;
   }
 `;
 
 const Logo = styled.img`
-  max-width: 350px;
-  width: 80%;
+  max-width: 200px;
+  width: 70%;
 `;
 
 const ButtonScroll = styled.div`

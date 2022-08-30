@@ -11,12 +11,20 @@ const MerchandiseContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
 
+  .merchandise-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .merchandise-item {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 2rem;
     gap: 20px;
+    width: 60%;
 
     margin-bottom: 3rem;
     padding: 30px;

@@ -169,7 +169,7 @@ const Merchandise = () => {
       variants={pageVariants}
       transition={pageTransition}
     >
-      <h1>Merchandise</h1>
+      <h1 name="up">Merch</h1>
 
       <div className="merchandise-list">
         <div className="merchandise-item">

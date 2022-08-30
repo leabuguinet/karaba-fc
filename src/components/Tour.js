@@ -5,7 +5,6 @@ import dataDates from '../assets/data/data-dates.json'
 
 import { AnimatePresence, motion } from "framer-motion";
 
-
 const EventCardsContainer = styled(motion.div)`
   flex: 1;
   display: flex;
@@ -16,7 +15,54 @@ const EventCardsContainer = styled(motion.div)`
     flex-direction: column;
     align-items: center;
   }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  
 `
+const ButtonMore = styled.button`
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px white solid;
+  background: none;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    left: 22.5%;
+    bottom: 48%;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    left: 22.5%;
+    rotate: 90deg;
+    transition: all 0.6s ease-in-out;
+    bottom: 48%;
+  }
+ 
+  &.opened {
+    &::after {
+    content: '';
+    rotate: 180deg;
+  }
+  }
+`
+
+
 const pageVariants = {
   initial: {
     opacity: 0,
@@ -56,28 +102,38 @@ let nextGig = [];
 
     if(gigMonth > currentMonth){
 
-      return nextGig.push(data)
+      return nextGig.push(data);
     } 
     
     if (gigMonth == currentMonth){
 
       if(gigDay >= currentDay){
 
-        return nextGig.push(data)
+        return nextGig.push(data);
       }
-      return passedGig.push(data)
+      return passedGig.push(data);
     }
 
   } else if (gigYear > currentYear){
 
-      return nextGig.push(data)
+      return nextGig.push(data);
   }
 
-  return passedGig.push(data)
-})
+  return passedGig.push(data);
+  })
 }
 
+passedGig.reverse();
+
 const Tour = () => {
+
+  const [isShown, setIsShown] = useState(false);
+
+  const handleClick = event => {
+    setIsShown(current => !current);
+    console.log(event.target);
+    event.target.classList.toggle('opened');
+  };
 
   return (
 
@@ -102,16 +158,21 @@ const Tour = () => {
         }
       </div>
 
-      <h1>Dates passées</h1>
+      <h2>Date passées</h2>
+      <ButtonMore onClick={(handleClick)}>
+  
 
-      <div>
-        { passedGig.map( (data) => {
-    
-          return <EventCard data={data} key={data.id}/>
+      </ButtonMore>
+      
+      {isShown && (
+        <div>
+          { passedGig.map((data) => {
 
-          })
-        }
-      </div>
+            return <EventCard data={data} key={data.id}/>
+            })
+          }
+        </div>
+      )}
 
     </EventCardsContainer>
   )

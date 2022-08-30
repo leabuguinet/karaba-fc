@@ -7,10 +7,10 @@ import dataAlbums from '../assets/data/data-albums.json'
 import Album from './Album';
 import { device } from "../global/Breakpoints";
 
-import { ReactComponent as YtIcon } from '../assets/icons/icon-youtube.svg';
 import { ReactComponent as AmIcon } from '../assets/icons/icon-applemusic.svg';
 import { ReactComponent as BcIcon } from '../assets/icons/icon-bandcamp.svg';
 import { ReactComponent as SpoIcon } from '../assets/icons/icon-spotify.svg';
+import { ReactComponent as DeeIcon } from '../assets/icons/icon-deezer.svg';
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -92,7 +92,7 @@ const Music = () => {
           variants={pageVariants}
           transition={pageTransition}
       >
-        <h1>Musique</h1>
+        <h1 name="up">Musique</h1>
 
         <h2>EP</h2>
 
@@ -104,10 +104,10 @@ const Music = () => {
           </AlbumList>
 
           <Icons>
-            <a href='#'><SpoIcon /></a>
-            <a href='#'><AmIcon /></a>
-            <a href='#'><BcIcon /></a>
-            <a href='#'><YtIcon /></a>
+            <a href='https://open.spotify.com/album/5iB0BwdGPSTp2HwSPpp3YD'><SpoIcon /></a>
+            <a href='https://music.apple.com/fr/album/empty-rooms-ep/1594184709?uo=4'><AmIcon /></a>
+            <a href='https://karabafc.bandcamp.com/album/empty-rooms'><BcIcon /></a>
+            <a href='https://www.deezer.com/fr/album/271193162'><DeeIcon /></a>
           </Icons>
 
         <h2>Vidéos</h2>

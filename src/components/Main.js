@@ -16,6 +16,7 @@ import Merchandise from './Merchandise';
 import Contact from './Contact';
 import Music from './Music';
 import Mentions from "./Mentions";
+import ScrollToTop from './scrollToTop';
 
 const MainContainer = styled.main`
   display: flex;
@@ -48,13 +49,16 @@ function Main() {
 
   return (
     <MainContainer>
+      
         <Nav />
         <AnimatePresence exitBeforeEnter>
+        <ScrollToTop />          
         <Routes>
 
             <Route path="/" element={<Tour/>}/>
+            <Route path="/tour" element={<Tour/>}/>
             <Route path="/musique" element={<Music/>} />
-            <Route path="/merchandise" element={<Merchandise/>} />
+            <Route path="/merch" element={<Merchandise/>} />
             <Route path="/contact" element={<Contact/>} />
             <Route path="/mentions" element={<Mentions/>} />
 

@@ -81,7 +81,7 @@ const Contact = () => {
       transition={pageTransition}
     >
 
-      <h1>Contact</h1>
+      <h1 name="up">Contact</h1>
 
       <div className='contact-content'>
       

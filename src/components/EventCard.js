@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { device } from "../global/Breakpoints";
-
+import { AnimatePresence, motion } from "framer-motion";
 import { ReactComponent as ExtLink } from '../assets/icons/external-link.svg'
 
 const Card = styled.div`
@@ -136,12 +136,42 @@ const Description = styled.div`
     }
   }
 `
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 0,
+    scale: 0.8
+  },
+  in: {
+    opacity: 1,
+    x: 0,
+    scale: 1
+  },
+  out: {
+    opacity: 0,
+    x: "-0vw",
+    scale: 1.2
+  }
+};
 
+const pageTransition = {
+  type: "tween",
+  ease: "easeInOut",
+  duration: 0.8
+};
 const EventCard = ({data}) => {
 
   return (
 
-    <Card>
+    <Card
+    as={motion.div}
+    key="1"
+    initial="initial"
+    animate="in"
+    exit={{ opacity: 0 }}
+    variants={pageVariants}
+    transition={pageTransition}>
+
       <DateInfo>
 
         <span>{data.day}/{data.month}</span>

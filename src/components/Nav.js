@@ -8,9 +8,6 @@ import { animation } from '../global/Animation'
 import waterDropSvg from '../assets/icons/water-drop.svg'
 import karabalogo from '../assets/icons/KarabaFC-logo-white.png';
 
-/* const [hovered, setHovered] = useState(false);
-const toggleHover = () => setHovered(!hovered); */
-
 const NavBarContainer = styled.nav`
   height: 600px;
   width: 30%;
@@ -32,14 +29,11 @@ const NavBarContainer = styled.nav`
     justify-content: space-evenly;
     z-index: 20;
     position: sticky;
-    //background-color:  #00001a;
     background-image: linear-gradient(180deg, rgba(0,0,26,1) 0%, rgba(0,0,26,0.8421052631578947) 64%, rgba(0,0,26,0.6666666666666667) 83%, rgba(0,0,26,0) 100%);
     top: 0;
     bottom: 0;
     padding-top: 10px;
   }
-  
-  
 `
 const NavBar = styled.div`
   display: flex;
@@ -51,8 +45,6 @@ const NavBar = styled.div`
   @media ${device.tabletL} { 
     flex-direction: row;
     justify-content: space-between;
-    //background-color:  #00001a;
-    //width: 100%;
     gap: 10px;
     width: 70%;
   }
@@ -227,14 +219,14 @@ export default function Nav() {
     <NavBarContainer>
       
       <Element name="anchor">
-        <Logo src={karabalogo} alt='KARABA FC' />
+        <a href="https://karabafc.com"><Logo src={karabalogo} alt='KARABA FC' /></a>
       </Element>
       
       <NavBar>
 
-        <NavLinkStyled to="/">TOUR</NavLinkStyled>
+        <NavLinkStyled to="/tour">TOUR</NavLinkStyled>
         <NavLinkStyled to="/musique">MUSIQUE</NavLinkStyled>
-        <NavLinkStyled to="/merchandise">MERCHANDISE</NavLinkStyled>
+        <NavLinkStyled to="/merch">MERCH</NavLinkStyled>
         <NavLinkStyled to="/contact">CONTACT</NavLinkStyled>
 
       </NavBar>

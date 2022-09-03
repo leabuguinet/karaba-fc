@@ -27,8 +27,12 @@ const Mentions = () => {
         <h2>Crédits :</h2>
         
             <p>Pictogrammes : https://icones8.fr/</p>
-            <p>Photo haut de page : --</p>
-            <p className='p-mb'>Photo bas de page : --</p>
+            <p>Photo haut de page : Alex Lerum</p>
+            <p className='p-mb'>Photo bas de page : Marcos Paulo Prado</p>
+
+        <h2>Cookies :</h2>
+
+          <p>Ce site n'utilise aucun cookie et ne collecte aucune donnée.</p>
 
     </MentionsContainer>
   )

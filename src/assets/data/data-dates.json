@@ -76,51 +76,40 @@
         "year": "2022",
         "city": "Liège (BE)",
         "location": "La Zone",
-        "eventlink": "https://blablabla.com",
+        "eventlink": "https://fb.me/e/3M6UxA8jZ",
         "description": ""
 
     },
     {
         "id": "9",
-        "day": "03",
-        "month": "09",
-        "year": "2022",
-        "city": "Liège (BE)",
-        "location": "La Zone",
-        "eventlink": "https://blablabla.com",
-        "description": ""
-
-    },
-    {
-        "id": "10",
         "day": "10",
         "month": "09",
         "year": "2022",
         "city": "Brest",
         "location": "UBO",
-        "eventlink": "https://blablabla.com",
+        "eventlink": "",
         "description": ""
 
     },
     {
-        "id": "11",
+        "id": "10",
         "day": "01",
         "month": "10",
         "year": "2022",
         "city": "Nancy",
         "location": "Fox Den",
-        "eventlink": "https://blablabla.com",
+        "eventlink": "https://fr-fr.facebook.com/FoxDenNancy/",
         "description": ""
 
     },
     {
-        "id": "12",
+        "id": "11",
         "day": "21",
         "month": "10",
         "year": "2022",
         "city": "Paris",
         "location": "Supersonic",
-        "eventlink": "https://blablabla.com",
+        "eventlink": "https://fb.me/e/1XMN4hnwZ",
         "description": ""
 
     }

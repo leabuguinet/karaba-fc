@@ -153,10 +153,10 @@ const Tour = () => {
 
     <EventCardsContainer 
       as={motion.div}
-      key="1"
+      //key="1"
       initial="initial"
       animate="in"
-      exit={{ opacity: 0 }}
+      //exit={{ y: "50%", opacity: 0, transition: {duration: 0.1},  }}
       variants={pageVariants}
       transition={pageTransition}
     >
@@ -174,18 +174,29 @@ const Tour = () => {
 
       <h2 className="previousGigs"><span>Dates précédentes</span> <ButtonMore onClick={(handleClick)} /></h2>
 
-      
+      <AnimatePresence>
       {isShown && (
-        <div>
+        <motion.div 
+        as={motion.div}
+        key="1"
+        initial="initial"
+        animate="in"
+        exit={{ y: "50%", opacity: 0, transition: {duration: 0.5},  }}
+        variants={pageVariants}
+        transition={pageTransition}>
           { passedGig.map((data) => {
 
             return <EventCard data={data} key={data.id}/>
             })
           }
-        </div>
+        </motion.div>
       )}
+      </AnimatePresence>
 
     </EventCardsContainer>
+
+    
+    
   )
 }
 

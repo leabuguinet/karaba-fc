@@ -4,7 +4,7 @@ import * as Scroll from "react-scroll";
 
 /* Images */
 
-import karabalogo from "../assets/icons/KarabaFC-logo-white.png";
+import karabalogo from "../assets/icons/KarabaFC-logo-white-light.png";
 import headerBg from "../assets/images/alex-lerum.jpg";
 import arrowDown from "../assets/icons/down-arrow.svg";
 

@@ -5,7 +5,7 @@ import * as Scroll from 'react-scroll';
 import { device } from '../global/Breakpoints'
 
 import waterDropSvg from '../assets/icons/water-drop.svg'
-import karabalogo from '../assets/icons/KarabaFC-logo-white.png';
+import karabalogo from '../assets/icons/KarabaFC-logo-white-light.png';
 
 const NavBarContainer = styled.nav`
   height: 600px;

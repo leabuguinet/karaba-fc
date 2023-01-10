@@ -67,10 +67,11 @@ const MerchandiseContainer = styled(motion.div)`
     @media ${device.mobileXL} {
       flex-direction: column;
       align-items: center;
+      width: 80%
     }
 
     .merchandise-img {
-      width: calc(40% - 20px);
+      //width: calc(40% - 20px);
       min-width: 175px;
 
       img {
@@ -81,24 +82,35 @@ const MerchandiseContainer = styled(motion.div)`
           max-width: 300px;
         }
       }
-      @media ${device.tabletL} {
+      /* @media ${device.tabletL} {
         width: calc(40% - 20px);
-      }
+      } */
       @media ${device.mobileXL} {
         width: 100%;
       }
+
+      /* @media ${device.laptopXL} {
+        width: 50%;
+        text-align: center;
+      } */
     }
     .merchandise-description {
-      width: calc(60% - 20px);
+      //width: calc(60% - 20px);
+      width: 100%;
 
+      @media ${device.laptopXL} {
+        //width: 100%;
+      }
       @media ${device.mobileXL} {
         width: 100%;
       }
       h2 {
         margin-top: 0;
-        margin-bottom: 1rem;
+        margin-bottom: 1.5rem;
         text-transform: uppercase;
         font-weight: 400;
+        text-align: center;
+      
       }
 
       h2,

@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/static/css/main.073c9b0a.css",
+    "main.js": "/static/js/main.eeff8757.js",
+    "static/js/787.405ea998.chunk.js": "/static/js/787.405ea998.chunk.js",
+    "static/media/marcos-paulo-prado.jpg": "/static/media/marcos-paulo-prado.bf2b6143fa3af7b220f3.jpg",
+    "static/media/alex-lerum.jpg": "/static/media/alex-lerum.7ad106da4f552712637d.jpg",
+    "static/media/KarabaFC-logo-white-light.png": "/static/media/KarabaFC-logo-white-light.b7c52a2818ae45925866.png",
+    "static/media/Karaba-F.C-gig.jpg": "/static/media/Karaba-F.C-gig.156f8f05a39be7c859be.jpg",
+    "static/media/Karaba-F.C-k7.jpeg": "/static/media/Karaba-F.C-k7.665b039ae9ddcb4e14b8.jpeg",
+    "static/media/Karaba-F.C-tshirt.jpeg": "/static/media/Karaba-F.C-tshirt.5eb7fdcc5ca3da66c761.jpeg",
+    "static/media/icon-spotify.svg": "/static/media/icon-spotify.11a85d6c4c809cd6ff8f967309717706.svg",
+    "static/media/icon-facebook.svg": "/static/media/icon-facebook.89a1647f06198661b0bb4bbc9579c355.svg",
+    "static/media/icon-applemusic.svg": "/static/media/icon-applemusic.2e0354c6b7fa37ee10a9ef4115c79c67.svg",
+    "static/media/icon-bandcamp.svg": "/static/media/icon-bandcamp.dddef364f86f576d6e033c737c760c9e.svg",
+    "static/media/icon-youtube.svg": "/static/media/icon-youtube.f4957cea84e72e63cb81194e31466a48.svg",
+    "static/media/external-link.svg": "/static/media/external-link.f428e159acdca4edf22e9a60d5e65aa8.svg",
+    "static/media/icon-instagram.svg": "/static/media/icon-instagram.42be3271906d5fc98c8a135233b98bfa.svg",
+    "static/media/icon-deezer.svg": "/static/media/icon-deezer.97cf665b33cdd8b937f667e1cb404135.svg",
+    "index.html": "/index.html",
+    "static/media/water-drop.svg": "/static/media/water-drop.f2d08cf665e708ccd2844a26bb307a50.svg",
+    "static/media/down-arrow.svg": "/static/media/down-arrow.92f30ae3eaf39975d9638d06e7cdee1e.svg",
+    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
+    "main.eeff8757.js.map": "/static/js/main.eeff8757.js.map",
+    "787.405ea998.chunk.js.map": "/static/js/787.405ea998.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.eeff8757.js"
+  ]
+}

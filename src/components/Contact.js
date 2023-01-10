@@ -17,7 +17,7 @@ const ContactContainer = styled(motion.div)`
     margin-bottom: 3rem;
 
     div {
-      width: 70%;
+      width: 80%;
       display: flex;
       flex-direction: column;
       
@@ -86,7 +86,7 @@ const Contact = () => {
       <div className='contact-content'>
       
         <div>
-        <img src={KarabaFCGig}></img>
+        <img src={KarabaFCGig} alt="Karaba F.C band"></img>
         <span>© Gérald Chabaud</span>
         </div>
         <a href="mailto:feticheprodfrance@gmail.com">feticheprodfrance@gmail.com</a>

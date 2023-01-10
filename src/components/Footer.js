@@ -97,7 +97,7 @@ export default function Footer() {
       </Icons>
 
       <Mentions>
-          2022 • <NavLink to="/mentions">Mentions</NavLink>
+          2023 • <NavLink to="/mentions">Mentions</NavLink>
       </Mentions>
 
     </FooterContainer>

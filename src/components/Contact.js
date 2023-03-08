@@ -22,7 +22,7 @@ const ContactContainer = styled(motion.div)`
       flex-direction: column;
       
       span {
-        color: #81aecb;
+        color: #baa4b9;
         font-weight: 400;
         font-size: 0.7rem;
         margin-top: 5px;

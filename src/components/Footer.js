@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { device } from "../global/Breakpoints";
 
 import KarabaFooterImg3 from '../assets/images/marcos-paulo-prado.jpg'
+import headerBg from "../assets/images/bgpink.png";
 
 import { ReactComponent as IgIcon } from '../assets/icons/icon-instagram.svg';
 import { ReactComponent as FbIcon } from '../assets/icons/icon-facebook.svg';
@@ -15,7 +16,7 @@ const FooterContainer = styled.footer`
   color: white;
   width: 100%;
   //height: 200px;
-  background: linear-gradient(180deg, rgba(0,0,26,1) 0%, rgba(0,0,26,0.5130427170868348) 53%, rgba(0,0,26,0.3029586834733894) 100%), url(${KarabaFooterImg3});
+  background: /* linear-gradient(180deg, rgba(0,0,26,1) 0%, rgba(0,0,26,0.5130427170868348) 53%, rgba(0,0,26,0.3029586834733894) 100%),  */url(${headerBg});
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -35,11 +36,11 @@ const Icons = styled.div`
   gap: 40px;
 
   a svg.logo-1 path {
-    fill: url(#logo-gradient1) #81aecb;
+    fill: url(#logo-gradient1) #baa4b9;
 	}
 
   a svg.logo-2 path {
-    fill: url(#logo-gradient2) #81aecb;
+    fill: url(#logo-gradient2) #baa4b9;
 	}
 
   a svg.logo-3 path {
@@ -58,11 +59,11 @@ const Icons = styled.div`
     transition: 1s ease-in-out;
 
     &:hover stop:first-child {
-    stop-color: #81aecb;
+    stop-color: #baa4b9;
     }
 
     &:hover stop:last-child {
-      stop-color: #81aecb;
+      stop-color: #baa4b9;
     }
   }
 

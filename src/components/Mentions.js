@@ -27,8 +27,8 @@ const Mentions = () => {
         <h2>Crédits :</h2>
         
             <p>Pictogrammes : https://icones8.fr/</p>
-            <p>Photo haut de page : Alex Lerum</p>
-            <p className='p-mb'>Photo bas de page : Marcos Paulo Prado</p>
+{/*             <p>Photo haut de page : Alex Lerum</p>
+            <p className='p-mb'>Photo bas de page : Marcos Paulo Prado</p> */}
 
         <h2>Cookies :</h2>
 

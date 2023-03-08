@@ -16,6 +16,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const KarabaClipUrl = "zPwLwzbASlk";
 
+
 const MusicContainer = styled(motion.div)`
   flex: 1;
   display: flex;
@@ -25,10 +26,11 @@ const MusicContainer = styled(motion.div)`
 
 const AlbumList = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 10px;
+  align-items: center;
 `
 
 
@@ -94,7 +96,7 @@ const Music = () => {
       >
         <h1 name="up">Musique</h1>
 
-        <h2>EP</h2>
+        <h2></h2>
 
           <AlbumList>
             { dataAlbums.map( (data) => {

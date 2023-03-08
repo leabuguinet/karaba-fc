@@ -45,18 +45,8 @@ const MerchandiseContainer = styled(motion.div)`
       left: 0;
       border-radius: 20px;
       background: rgb(0, 0, 26);
-      background: -webkit-linear-gradient(
-        130deg,
-        rgba(0, 0, 26, 0) 0%,
-        rgba(0, 27, 92, 0) 42%,
-        rgba(0, 51, 153, 0.6012780112044818)
-      );
-      background: linear-gradient(
-        130deg,
-        rgba(0, 0, 26, 0) 0%,
-        rgba(0, 27, 92, 0) 42%,
-        rgba(0, 51, 153, 0.6012780112044818)
-      );
+      background: -webkit-linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(119, 98, 112, 0.843));
+      background: linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(119, 98, 112, 0.843));
       transition: opacity 0.4s linear;
       opacity: 0;
     }
@@ -126,7 +116,7 @@ const MerchandiseContainer = styled(motion.div)`
       }
 
       a:hover {
-        color: #81aecb;
+        color: #baa4b9;;
       }
 
       .underline {
@@ -140,7 +130,7 @@ const MerchandiseContainer = styled(motion.div)`
         right: 0;
         width: 0;
         height: 1px;
-        background-color: #81aecb;
+        background-color: #baa4b9;;
         transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
       }
 

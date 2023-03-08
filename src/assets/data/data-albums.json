@@ -1,12 +1,28 @@
 [
     {
         "id": "1",
+        "title": "Roundabout",
+        "cover": "/images/RoundaboutArtworkSingle.001.jpeg",
+        "recording": "Serge Morattel",
+        "mix": "Serge Morattel",
+        "mastering": "Serge Morattel",
+        "authors": "KARABA F.C.",
+        "releaseDate": "03/03/23",
+        "label1": "",
+        "label1Link": "",
+        "label2": "",
+        "label2Link": "",
+        "buyLink" : "https://karabafc.bandcamp.com/"
+
+    },
+    {
+        "id": "2",
         "title": "Empty Rooms",
         "cover": "/images/Karaba-F.C-Empty-Rooms_Cover_Discogs.jpg",
         "recording": "Studio Firgun - Charles de Montalembert - Tom Fonty",
         "mix": "Charles de Montalembert",
         "mastering": "Serge Morattel à Rec Studio",
-        "authors": "KARABA FC",
+        "authors": "KARABA F.C.",
         "releaseDate": "15/12/21",
         "label1": "Atypeek Music",
         "label1Link": "https://www.atypeekmusic.com/",
@@ -14,5 +30,6 @@
         "label2Link": "https://aladerivemedia.wordpress.com/",
         "buyLink" : "https://karabafc.bandcamp.com/album/empty-rooms"
 
-    }
+    }  
+
 ]

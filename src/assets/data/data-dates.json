@@ -112,6 +112,61 @@
         "eventlink": "https://fb.me/e/1XMN4hnwZ",
         "description": ""
 
+    },
+    {
+        "id": "12",
+        "day": "4",
+        "month": "03",
+        "year": "2023",
+        "city": "Paris",
+        "location": "Supersonic",
+        "eventlink": "https://fb.me/e/3lkhk1S7l",
+        "description": ""
+
+    },
+    {
+        "id": "13",
+        "day": "21",
+        "month": "04",
+        "year": "2023",
+        "city": "Paris",
+        "location": "L'International",
+        "eventlink": "https://facebook.com/events/s/karaba-fc-release-party-mia-vi/941183060415575/",
+        "description": "Release Party"
+
+    },
+    {
+        "id": "14",
+        "day": "22",
+        "month": "04",
+        "year": "2023",
+        "city": "Caen",
+        "location": "TBA",
+        "eventlink": "",
+        "description": ""
+
+    },
+    {
+        "id": "15",
+        "day": "23",
+        "month": "04",
+        "year": "2023",
+        "city": "Rennes",
+        "location": "Le Gazoline",
+        "eventlink": "",
+        "description": ""
+
+    },
+    {
+        "id": "16",
+        "day": "24",
+        "month": "04",
+        "year": "2023",
+        "city": "Vannes",
+        "location": "Le Barailleur",
+        "eventlink": "",
+        "description": ""
+
     }
 
 ]

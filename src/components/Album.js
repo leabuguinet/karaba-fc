@@ -23,10 +23,14 @@ const Info = styled.div`
   bottom: 0px;
   //width: 100%;
   padding: 0px 25px;
-  background-color: #00001acc;
+  //background-color: #00001acc;
+
+  background-color: rgb(26 15 24 / 80%);
   -webkit-transition: all 0.35s ease;
   transition: all 0.5s ease-in-out;
   top: 87%;
+  width: 100%;
+  padding-right: 3rem;
 
   h3 {
     margin-bottom: 2rem;
@@ -51,8 +55,10 @@ const Info = styled.div`
     left: 0;
     width: 100%;
     height: 80px;
-    background-image: -webkit-linear-gradient(top, transparent 0%, #00001acc 100%);
-    background-image: linear-gradient(to bottom, transparent 0%, #00001acc 100%);
+    //background-image: -webkit-linear-gradient(top, transparent 0%, #00001acc 100%);
+    //background-image: linear-gradient(to bottom, transparent 0%, #00001acc 100%);
+    background-image: -webkit-linear-gradient(top, transparent 0%, #1a0f18cc 100%);
+    background-image: linear-gradient(to bottom, transparent 0%, #1a0f18cc 100%);
   }
 
   //If the user uses a touch 
@@ -145,7 +151,7 @@ const Album = ({data}) => {
 
 
   return (
-    <AlbumSquare cover={data.cover}>
+    <AlbumSquare cover={data.cover} buy={data.buy}>
       
       <img src={data.cover}></img>
 
@@ -157,7 +163,7 @@ const Album = ({data}) => {
           <p><span>Mixage :</span> {data.mix} </p>
           <p><span>Masterisé par :</span> {data.mastering}</p>
           <p><span>Musique et textes :</span> {data.authors}</p>
-          <p><a href={data.label1Link}>{data.label1}</a> - <a href={data.label2Link}>{data.label2}</a></p>
+          <p><a href={data.label1Link}>{data.label1}</a> <a href={data.label2Link}>{data.label2}</a></p>
           <p><a className="buybutton" href={data.buyLink}>Acheter <ExtLink /></a></p>
         </div>
       </Info>

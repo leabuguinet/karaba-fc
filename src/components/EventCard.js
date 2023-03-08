@@ -37,8 +37,11 @@ const Card = styled.div`
       left: 0;
       border-radius: 20px;
       background: rgb(0,0,26);
-      background: -webkit-linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(0,51,153,0.6012780112044818));
-      background: linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(0,51,153,0.6012780112044818));
+      /* background: -webkit-linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(0,51,153,0.6012780112044818));
+      background: linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(0,51,153,0.6012780112044818)); */
+      background: -webkit-linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(119, 98, 112, 0.843));
+      background: linear-gradient(130deg, rgba(0,0,26,0) 0%, rgba(0,27,92,0) 42%, rgba(119, 98, 112, 0.843));
+
       opacity: 0;
       transition: opacity 0.4s linear;
     }
@@ -73,7 +76,7 @@ const DateInfo = styled.div`
     }
 
     span:last-child{
-      color: #81aecb;
+      color: #baa4b9;
       letter-spacing: 2px
     }
 
@@ -85,6 +88,7 @@ const Description = styled.div`
 
   h2 {
     margin: 0;
+    line-height: 0;
 
     @media ${device.mobileL} {
 
@@ -92,6 +96,7 @@ const Description = styled.div`
       flex-wrap: wrap;
       align-items: baseline;
       flex-direction: column;
+      line-height: normal;
 
       span {
         margin-top: 10px;

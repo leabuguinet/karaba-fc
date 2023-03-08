@@ -18,7 +18,8 @@ import ScrollToTop from './components/scrollToTop';
 const GlobalStyle = createGlobalStyle`
 
   body {
-    background-color:  #00001a;
+    //background-color:  #00001a;
+    background-color: #4b3b46;
     font-family: 'League Spartan', sans-serif;
   }
 

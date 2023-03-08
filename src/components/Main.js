@@ -16,6 +16,7 @@ import Merchandise from './Merchandise';
 import Contact from './Contact';
 import Music from './Music';
 import Mentions from "./Mentions";
+import Bonus from "./Bonus";
 import ScrollToTop from './scrollToTop';
 
 const MainContainer = styled.main`
@@ -61,6 +62,8 @@ function Main() {
             <Route path="/merch" element={<Merchandise/>} />
             <Route path="/contact" element={<Contact/>} />
             <Route path="/mentions" element={<Mentions/>} />
+
+            <Route path="/winchestaaa" element={<Bonus/>} />
 
             <Route path="*" element={<Navigate to="/"/>} />
 

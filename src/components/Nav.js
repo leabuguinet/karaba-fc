@@ -28,10 +28,14 @@ const NavBarContainer = styled.nav`
     justify-content: space-evenly;
     z-index: 20;
     position: sticky;
-    background-image: linear-gradient(180deg, rgba(0,0,26,1) 0%, rgba(0,0,26,0.8421052631578947) 64%, rgba(0,0,26,0.6666666666666667) 83%, rgba(0,0,26,0) 100%);
+    //background-image: linear-gradient(180deg, rgba(0,0,26,1) 0%, rgba(0,0,26,0.8421052631578947) 64%, rgba(0,0,26,0.6666666666666667) 83%, rgba(0,0,26,0) 100%);
+    background-image: linear-gradient(180deg, rgb(75, 59, 70) 0%, rgba(75, 59, 70,0.8421052631578947) 64%, rgba(75, 59, 70,0.6666666666666667) 83%, rgba(75, 59, 70,0) 100%);
+
+    
     top: 0;
     bottom: 0;
     padding-top: 10px;
+    padding-bottom: 5px;
   }
 `
 const NavBar = styled.div`

@@ -138,6 +138,14 @@ export default function BurgerNav() {
   
   };
 
+  const handleClickOnLink = event => {
+    document.querySelector('testt').classList.toggle('openMenu-arrow');
+    let NavBarContainer = document.querySelector('.burgerNav');
+    NavBarContainer.classList.toggle('openMenu');
+    document.body.classList.toggle('no-scroll')
+  
+  };
+
   return (
     <>
     <CloseButton onClick={handleClick} className='testt'><Element name="anchor"></Element></CloseButton>
@@ -151,10 +159,10 @@ export default function BurgerNav() {
       
       <NavBar>
         <Logo src={karabalogo} alt='' />
-        <NavLinkStyled onClick={handleClick} to="/tour">TOUR</NavLinkStyled>
-        <NavLinkStyled onClick={handleClick} to="/musique">MUSIQUE</NavLinkStyled>
-        <NavLinkStyled onClick={handleClick} to="/merch">MERCH</NavLinkStyled>
-        <NavLinkStyled onClick={handleClick} to="/contact">CONTACT</NavLinkStyled>
+        <NavLinkStyled onClick={handleClickOnLink} to="/tour">TOUR</NavLinkStyled>
+        <NavLinkStyled onClick={handleClickOnLink} to="/musique">MUSIQUE</NavLinkStyled>
+        <NavLinkStyled onClick={handleClickOnLink} to="/merch">MERCH</NavLinkStyled>
+        <NavLinkStyled onClick={handleClickOnLink} to="/contact">CONTACT</NavLinkStyled>
 
       </NavBar>
 

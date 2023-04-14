@@ -233,6 +233,24 @@ const Music = () => {
       };
     }, []);
 
+
+    const ref2 = useRef(null);
+
+    useEffect(() => {
+      const handleClick = event => {
+        element.classList.toggle('active')
+        element.classList.toggle('closed')
+      };
+
+      const element = ref2.current;
+
+      element.addEventListener('click', handleClick);
+
+      return () => {
+        element.removeEventListener('click', handleClick);
+      };
+    }, []);
+
   return (
 
       <MusicContainer 
@@ -246,7 +264,7 @@ const Music = () => {
       >
         <h1 name="up">Musique</h1>
 
-        <h2></h2>
+        <h2>EP</h2>
 
 {/*           <AlbumList>
             { dataAlbums.map( (data) => {
@@ -259,9 +277,9 @@ const Music = () => {
 
           <AlbumSquare>
             
-            <img alt src={aprilDancer}></img>
+            <img alt="" src={aprilDancer} />
 
-            <Info className="albumhover closed" ref={ref}>
+            <Info className="albumhover closed" ref={ref2}>
               <h3>APRIL DANCER</h3> 
 
               <div>
@@ -276,7 +294,7 @@ const Music = () => {
 
           <AlbumSquare>
             
-            <img alt src={emptyRooms}></img>
+            <img alt="" src={emptyRooms} />
 
             <Info className="albumhover closed" ref={ref}>
               <h3>EMPTY ROOMS</h3> 

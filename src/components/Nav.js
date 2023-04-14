@@ -22,6 +22,10 @@ const NavBarContainer = styled.nav`
     width: 100%;
   }
 
+  @media ${device.tablet} { 
+    display: none;
+}
+
   //PHONE
   @media ${device.mobileL} { 
     flex-direction: row;

@@ -151,6 +151,26 @@ const Album = ({data}) => {
 
 
   return (
+/*     <AlbumSquare cover={data.cover} buy={data.buy}>
+      
+      <img src={data.cover}></img>
+
+      <Info className="albumhover closed" ref={ref}>
+        <h3>{data.title} </h3> 
+
+        <div>
+          <p><span>Enregistrement :</span> {data.recording} </p>
+          <p><span>Mixage :</span> {data.mix} </p>
+          <p><span>Masterisé par :</span> {data.mastering}</p>
+          <p><span>Musique et textes :</span> {data.authors}</p>
+          <p><a href={data.label1Link}>{data.label1}</a> <a href={data.label2Link}>{data.label2}</a></p>
+          <p><a className="buybutton" href={data.buyLink}>Acheter <ExtLink /></a></p>
+        </div>
+      </Info>
+
+    </AlbumSquare> */
+
+
     <AlbumSquare cover={data.cover} buy={data.buy}>
       
       <img src={data.cover}></img>

@@ -7,7 +7,8 @@ import * as Scroll from "react-scroll";
 import karabalogo from "../assets/icons/KarabaFC-logo-white-light.png";
 import headerBg from "../assets/images/bgpink.png";
 import arrowDown from "../assets/icons/down-arrow.svg";
-import singleCover from "../assets/images/RoundaboutArtworkSingle.001.jpeg";
+import singleCover from "../assets/images/aprildancer-artwork.jpeg";
+//import BurgerNav from "./BurgerNav";
 
 const HeaderDiv = styled.header`
   &.header {
@@ -38,14 +39,31 @@ const Logo = styled.img`
   
 `;
 
-const SingleCover = styled.img`
-  max-width: 50%;
-  max-height: 50%;
+const SingleCover = styled.a`
+  max-width: 350px;
+  max-height: 350px;
+
+  width: 100%;
+  height: 100%;
   //margin-top:4rem;
+  //background-image: "${singleCover}";
 
   @media screen and (max-height: 420px){
-    max-width: 50%;
-    max-height: 50%;
+    max-width: 100%;
+    max-height: 100%;
+
+    max-width: 150px;
+    max-height: 150px;
+  }
+
+  img {
+    width: 100%;
+    object-fit: contain;
+
+    @media screen and (max-height: 420px){
+    max-width: 100%;
+    max-height: 100%;
+  }
   }
 
 
@@ -73,14 +91,19 @@ export default function Header() {
       delay: 100,
       smooth: true,
       //offset: -50
+
     });
   };
 
   return (
     <HeaderDiv id="header" className="header">
-      <Logo src={karabalogo} alt="KARABA FC"></Logo>
-      <SingleCover src={singleCover} alt="KARABA FC"></SingleCover>
-      <TitleSingle>OUT NOW</TitleSingle>
+              
+      <Logo src={karabalogo} alt=""></Logo>
+      <SingleCover href="https://distrokid.com/hyperfollow/karabafc/april-dancer"><img src={singleCover} alt=""/></SingleCover>
+      
+      <TitleSingle>NEW EP OUT!</TitleSingle>
+
+
       <ButtonScroll onClick={scrollToAnchor}></ButtonScroll>
     </HeaderDiv>
   );

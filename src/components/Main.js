@@ -11,6 +11,7 @@ import { AnimatePresence } from "framer-motion";
 import { device } from "../global/Breakpoints";
 
 import Nav from './Nav';
+import BurgerNav from "./BurgerNav";
 import Tour from './Tour';
 import Merchandise from './Merchandise';
 import Contact from './Contact';
@@ -18,6 +19,7 @@ import Music from './Music';
 import Mentions from "./Mentions";
 import Bonus from "./Bonus";
 import ScrollToTop from './scrollToTop';
+import Anchor from './Anchor';
 
 const MainContainer = styled.main`
   display: flex;
@@ -49,9 +51,13 @@ const MainContainer = styled.main`
 function Main() {
 
   return (
+    <>
+    
     <MainContainer>
       
         <Nav />
+        <Anchor />
+        
         <AnimatePresence exitBeforeEnter>
         <ScrollToTop />          
         <Routes>
@@ -71,6 +77,7 @@ function Main() {
         </AnimatePresence>
 
     </MainContainer>
+    </>
   );
 }
 

@@ -109,10 +109,11 @@ const Description = styled.div`
     span {
       margin-right: 4px;
       font-weight: 400;
+      text-align: start;
         
       .location {
-          font-size: 0.8rem;
-          font-size: clamp(0.8rem, 0.9333333333333333rem + 1.3333333333333335vw, 1.5rem);
+        font-size: 0.8rem;
+        font-size: clamp(0.8rem, 0.9333333333333333rem + 1.3333333333333335vw, 1.5rem);
       }
 
     }

@@ -1,11 +1,14 @@
 import React from 'react'
+import {useRef, useEffect} from 'react';
+
 import styled from "styled-components"
 import YoutubeEmbed from './YoutubeEmbed'
 
-import dataAlbums from '../assets/data/data-albums.json'
+//import dataAlbums from '../assets/data/data-albums.json'
 
-import Album from './Album';
+//import Album from './Album';
 import { device } from "../global/Breakpoints";
+import arrowDown from '../assets/icons/down-arrow.svg'
 
 import { ReactComponent as AmIcon } from '../assets/icons/icon-applemusic.svg';
 import { ReactComponent as BcIcon } from '../assets/icons/icon-bandcamp.svg';
@@ -13,6 +16,10 @@ import { ReactComponent as SpoIcon } from '../assets/icons/icon-spotify.svg';
 import { ReactComponent as DeeIcon } from '../assets/icons/icon-deezer.svg';
 
 import { AnimatePresence, motion } from "framer-motion";
+import { ReactComponent as ExtLink } from '../assets/icons/external-link.svg';
+
+import emptyRooms from "../assets/images/Karaba-F.C-Empty-Rooms_Cover_Discogs.jpg";
+import aprilDancer from "../assets/images/aprildancer-artwork.jpeg";
 
 const KarabaClipUrl = "zPwLwzbASlk";
 
@@ -33,6 +40,132 @@ const AlbumList = styled.div`
   align-items: center;
 `
 
+const AlbumSquare = styled.div`
+  background-size: contain;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    max-width: 440px;
+  }
+`
+const Info = styled.div`
+  position: absolute;
+  bottom: 0px;
+  //width: 100%;
+  //padding: 0px 25px;
+  //background-color: #00001acc;
+
+  background-color: rgb(26 15 24 / 80%);
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.5s ease-in-out;
+  top: 87%;
+  width: 100%;
+  //padding-right: 3rem;
+
+  h3 {
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  h3::after {
+    content: '';
+    background: url(${arrowDown});
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    margin-left: 10px;
+  }
+
+  h3, p {
+    padding: 0 1.5rem;
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    z-index: 2;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    //background-image: -webkit-linear-gradient(top, transparent 0%, #00001acc 100%);
+    //background-image: linear-gradient(to bottom, transparent 0%, #00001acc 100%);
+    background-image: -webkit-linear-gradient(top, transparent 0%, #1a0f18cc 100%);
+    background-image: linear-gradient(to bottom, transparent 0%, #1a0f18cc 100%);
+  }
+
+  //If the user uses a touch 
+  &.closed{
+    top: 87%
+  }
+  @media (pointer: coarse) {
+    &.active {
+      top: 80px;
+      h3::after {
+        transform: rotate(180deg);
+      }
+      @media ${device.mobileXL} {
+        top: 55px;
+      }
+      @media ${device.mobileL} { 
+        top: 0;
+      }
+    }  
+  } 
+
+  //If the user uses a mouse 
+  @media (hover: hover) and (pointer: fine) {
+    &:hover{
+      top: 80px;
+      h3::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  p {
+    @media ${device.mobileM} { 
+      line-height: 1;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white; 
+    font-weight: 600;
+  }
+  
+  p:last-child{
+    text-align: center;
+  }
+
+  a.buybutton {
+
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.9333333333333333rem + 1.3333333333333335vw, 1rem);
+
+    svg {
+    fill: #ffffff;
+    width: 20px;
+    height: 20px;
+    @media ${device.mobileXL} { 
+      width: 15px;
+      height: 15px;
+    }
+
+    & .link-arrow {
+      transition:  ease 0.5s ;
+    }
+  }
+  }
+`
 
 const pageVariants = {
   initial: {
@@ -82,6 +215,23 @@ const Icons = styled.div`
 
 const Music = () => {
 
+  //ALBUM HOVER 
+    const ref = useRef(null);
+
+    useEffect(() => {
+      const handleClick = event => {
+        element.classList.toggle('active')
+        element.classList.toggle('closed')
+      };
+
+      const element = ref.current;
+
+      element.addEventListener('click', handleClick);
+
+      return () => {
+        element.removeEventListener('click', handleClick);
+      };
+    }, []);
 
   return (
 
@@ -98,11 +248,51 @@ const Music = () => {
 
         <h2></h2>
 
-          <AlbumList>
+{/*           <AlbumList>
             { dataAlbums.map( (data) => {
               return <Album data={data} key={data.id}/>
               })
             }
+          </AlbumList> */}
+
+          <AlbumList>
+
+          <AlbumSquare>
+            
+            <img alt src={aprilDancer}></img>
+
+            <Info className="albumhover closed" ref={ref}>
+              <h3>APRIL DANCER</h3> 
+
+              <div>
+                <p><span>Enregistrement, mixage et mastering : </span>Serge Morattel  </p>
+                <p><span>Musique et textes : </span>KARABA F.C. </p>
+                <p></p>
+                <p><a className="buybutton" href="https://karabafc.bandcamp.com/album/april-dancer">Acheter <ExtLink /></a></p>
+              </div>
+            </Info>
+
+          </AlbumSquare>
+
+          <AlbumSquare>
+            
+            <img alt src={emptyRooms}></img>
+
+            <Info className="albumhover closed" ref={ref}>
+              <h3>EMPTY ROOMS</h3> 
+
+              <div>
+                <p><span>Enregistrement :</span> Studio Firgun, Charles de Montalembert, Tom Fonty  </p>
+                <p><span>Mixage : </span>Charles de Montalembert </p>
+                <p><span>Masterisé par : </span>Serge Morattel à Rec Studio </p>
+                <p><span>Musique et textes : </span>KARABA F.C. </p>
+                <p></p>
+                <p><a className="buybutton" href="https://karabafc.bandcamp.com/album/empty-rooms">Acheter <ExtLink /></a></p>
+              </div>
+            </Info>
+
+          </AlbumSquare>
+
           </AlbumList>
 
           <Icons>

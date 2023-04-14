@@ -12,6 +12,7 @@ import { device } from './global/Breakpoints';
 import Main from './components/Main';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import BurgerNav from './components/BurgerNav';
 
 import ScrollToTop from './components/scrollToTop';
 
@@ -21,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
     //background-color:  #00001a;
     background-color: #4b3b46;
     font-family: 'League Spartan', sans-serif;
+  }
+
+  .no-scroll {
+    overflow-y: hidden;
   }
 
   h1, h2, h3, p{
@@ -73,10 +78,12 @@ function App() {
     <>
       
       <GlobalStyle />
+      
       <BrowserRouter>
-
+        <BurgerNav />
+       
         <Header />
-
+       
         <Main />
 
         <Footer/>

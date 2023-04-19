@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import KarabaFCGig from '../assets/images/Karaba-F.C-gig.jpg';
 
-/* import testtrack from "../assets/images/01.Roundabout-MG-01.wav" */
+import bonusFile from "../assets/images/Karaba-FC-BONUS.zip";
 
 const ContactContainer = styled(motion.div)`
   flex: 1;
@@ -38,6 +38,10 @@ const ContactContainer = styled(motion.div)`
     a {
       color: #ffffff;
       margin-top: 2rem;
+
+      padding: 1rem;
+      border: #ffffff solid 1px;
+      border-radius: 5px;
     }
 
     
@@ -85,14 +89,14 @@ const Contact = () => {
 
       <h1 name="up">BONUS</h1>
 
+      
+
       <div className='contact-content'>
       
-        <div>
-
-        </div>
+        <h2>Merci pour votre soutien ♡</h2>
      
 
-        {/* <a href={testtrack} download={testtrack}>Télécharger</a> */}
+        <a href={bonusFile} download={bonusFile}>Télécharger</a>
 
       </div>
 

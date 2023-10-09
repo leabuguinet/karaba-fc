@@ -2,7 +2,7 @@ import React from 'react'
 import styled from "styled-components"
 import { AnimatePresence, motion } from "framer-motion";
 
-import KarabaFCGig from '../assets/images/Karaba-F.C-gig.jpg';
+import KarabaFCGig from '../assets/images/Karaba-F.C-gig2.jpg';
 
 const ContactContainer = styled(motion.div)`
   flex: 1;
@@ -81,13 +81,13 @@ const Contact = () => {
       transition={pageTransition}
     >
 
-      <h1 name="up">Contact</h1>
+      <h1 name="up">Booking</h1>
 
       <div className='contact-content'>
       
         <div>
         <img src={KarabaFCGig} alt="Karaba F.C band"></img>
-        <span>© Gérald Chabaud</span>
+        <span>©19lapins</span>
         </div>
         <a href="mailto:feticheprodfrance@gmail.com">feticheprodfrance@gmail.com</a>
 

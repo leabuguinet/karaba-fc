@@ -167,6 +167,28 @@
         "eventlink": "https://facebook.com/events/s/disease-show-musaraign-last-sh/2468639316638846/",
         "description": ""
 
+    },
+    {
+        "id": "17",
+        "day": "21",
+        "month": "10",
+        "year": "2023",
+        "city": "Le Mans",
+        "location": "Le Lézard",
+        "eventlink": "https://facebook.com/events/s/lugosi-carnage-piknik-karaba-f/1535408080529592/",
+        "description": ""
+
+    },
+    {
+        "id": "18",
+        "day": "30",
+        "month": "10",
+        "year": "2023",
+        "city": "Paris",
+        "location": "Supersonic",
+        "eventlink": "https://facebook.com/events/s/nature-morte-montagne-karaba-f/1499706854176756/",
+        "description": ""
+
     }
 
 

@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+import KarabaVinyl from "../assets/images/vinyl-aprildancer-karabafc.jpeg"
 import KarabaK7 from "../assets/images/Karaba-F.C-k7.jpeg";
-import KarabaTshirt from "../assets/images/Karaba-F.C-tshirt.jpeg";
+import KarabaTshirt from "../assets/images/Karaba-F.C-tshirt2.png";
 import { device } from "../global/Breakpoints";
 
 const MerchandiseContainer = styled(motion.div)`
@@ -25,7 +26,7 @@ const MerchandiseContainer = styled(motion.div)`
     margin-bottom: 2rem;
     gap: 20px;
     width: 60%;
-
+    max-width: 400px;
     margin-bottom: 3rem;
     padding: 30px;
     border-radius: 20px;
@@ -113,6 +114,7 @@ const MerchandiseContainer = styled(motion.div)`
         color: #ffffff;
         text-decoration: none;
         font-weight: 600;
+        cursor: pointer;
       }
 
       a:hover {
@@ -182,6 +184,64 @@ const Merchandise = () => {
       <h1 name="up">Merch</h1>
 
       <div className="merchandise-list">
+      <div className="merchandise-item">
+          <div className="merchandise-img">
+            <img src={KarabaVinyl} alt="Vinyle April Dancer" />
+          </div>
+          <div className="merchandise-description">
+            <h2>Vinyle APRIL DANCER</h2>
+            <p>1er pressage</p>
+            <p>Édition Limitée</p>
+            <p>
+              Comprend l’écoute en continu illimitée de l'EP APRIL DANCER au moyen de
+              l’appli gratuite de Bandcamp, ainsi que le téléchargement de haute
+              qualité aux formats MP3, FLAC et plus.
+            </p>
+            <p>
+            <a
+              className="underline"
+              href="https://aladeriverecords.bandcamp.com/album/d-rive-6-april-dancer-par-karaba-f-c"
+            >
+              Acheter via À La Dérive Records (FR)
+            </a>
+            </p>
+            <p>
+            <a
+              className="underline"
+              href="https://ripcordrecords.bandcamp.com/album/april-dancer"
+            >
+              Buy via Ripcord Records (UK)
+            </a>
+            </p>
+            <p>
+            <a
+              className="underline"
+              href="https://www.clevereagle.com/collections/clever-eagle-vinyl/products/karaba-fc-april-dancer-ep-vinyl"
+            >
+              Buy via Clever Eagle (US)
+            </a>
+            </p>
+          </div>
+        </div>
+      <div className="merchandise-item">
+          <div className="merchandise-img">
+            <img
+              src={KarabaTshirt}
+              alt="Tshirt rose et gris foncé Karaba F.C. - April Dancer"
+            />
+          </div>
+          <div className="merchandise-description">
+            <h2>April Dancer t-shirt</h2>
+            <p>Earth Positive - Climate neutral</p>
+            <p>Disponible en concert !</p>
+{/*             <a
+              className="underline"
+              href="https://karabafc.bandcamp.com/album/empty-rooms"
+            >
+              Acheter via BandCamp
+            </a> */}
+          </div>
+        </div>
         <div className="merchandise-item">
           <div className="merchandise-img">
             <img src={KarabaK7} alt="K7 de Empty Rooms du goupe Karaba-F.C" />
@@ -195,25 +255,6 @@ const Merchandise = () => {
               l’appli gratuite de Bandcamp, ainsi que le téléchargement de haute
               qualité aux formats MP3, FLAC et plus.
             </p>
-            <a
-              className="underline"
-              href="https://karabafc.bandcamp.com/album/empty-rooms"
-            >
-              Acheter via BandCamp
-            </a>
-          </div>
-        </div>
-
-        <div className="merchandise-item">
-          <div className="merchandise-img">
-            <img
-              src={KarabaTshirt}
-              alt="K7 de Empty Rooms du goupe Karaba-F.C"
-            />
-          </div>
-          <div className="merchandise-description">
-            <h2>Empty Rooms t-shirt</h2>
-            <p>Stanley/Stella organic cotton</p>
             <a
               className="underline"
               href="https://karabafc.bandcamp.com/album/empty-rooms"
